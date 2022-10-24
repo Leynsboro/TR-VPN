@@ -7,23 +7,82 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C16188B2906F60A0029EB09 /* 7227-vui-animation.json in Resources */ = {isa = PBXBuildFile; fileRef = 4C16188A2906F60A0029EB09 /* 7227-vui-animation.json */; };
+		4C16188D2906F6540029EB09 /* TRVPN.ovpn in Resources */ = {isa = PBXBuildFile; fileRef = 4C16188C2906F6540029EB09 /* TRVPN.ovpn */; };
+		4C16188F2906FC9F0029EB09 /* Extension+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C16188E2906FC9F0029EB09 /* Extension+UIView.swift */; };
+		4C3540202902A78600570BD9 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 4C35401F2902A78600570BD9 /* Lottie */; };
+		4C3540282902B3FE00570BD9 /* 95680-purple-circle.json in Resources */ = {isa = PBXBuildFile; fileRef = 4C3540272902B3FE00570BD9 /* 95680-purple-circle.json */; };
+		4C35402A2902B8FE00570BD9 /* 5785-checkmark.json in Resources */ = {isa = PBXBuildFile; fileRef = 4C3540292902B8FE00570BD9 /* 5785-checkmark.json */; };
+		4C35402C2902BCB900570BD9 /* 122729-vibecity-loader.json in Resources */ = {isa = PBXBuildFile; fileRef = 4C35402B2902BCB900570BD9 /* 122729-vibecity-loader.json */; };
+		4C35402E2902C6D600570BD9 /* 97670-tomato-error.json in Resources */ = {isa = PBXBuildFile; fileRef = 4C35402D2902C6D600570BD9 /* 97670-tomato-error.json */; };
 		4CE1CEE428FEB1F900E6C30E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE1CEE328FEB1F900E6C30E /* AppDelegate.swift */; };
 		4CE1CEE628FEB1F900E6C30E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE1CEE528FEB1F900E6C30E /* SceneDelegate.swift */; };
-		4CE1CEE828FEB1F900E6C30E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE1CEE728FEB1F900E6C30E /* ViewController.swift */; };
+		4CE1CEE828FEB1F900E6C30E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE1CEE728FEB1F900E6C30E /* MainViewController.swift */; };
 		4CE1CEEB28FEB1F900E6C30E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CE1CEE928FEB1F900E6C30E /* Main.storyboard */; };
 		4CE1CEED28FEB1FA00E6C30E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CE1CEEC28FEB1FA00E6C30E /* Assets.xcassets */; };
 		4CE1CEF028FEB1FA00E6C30E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CE1CEEE28FEB1FA00E6C30E /* LaunchScreen.storyboard */; };
+		4CE1CEF928FEB2ED00E6C30E /* OpenVPNAdapter in Frameworks */ = {isa = PBXBuildFile; productRef = 4CE1CEF828FEB2ED00E6C30E /* OpenVPNAdapter */; };
+		4CE1CF0228FEB36900E6C30E /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CE1CF0128FEB36900E6C30E /* NetworkExtension.framework */; };
+		4CE1CF0528FEB36900E6C30E /* PacketTunnelProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE1CF0428FEB36900E6C30E /* PacketTunnelProvider.swift */; };
+		4CE1CF0A28FEB36900E6C30E /* tunnel.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 4CE1CEFF28FEB36900E6C30E /* tunnel.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		4CE1CF1028FEB3A400E6C30E /* OpenVPNAdapter in Frameworks */ = {isa = PBXBuildFile; productRef = 4CE1CF0F28FEB3A400E6C30E /* OpenVPNAdapter */; };
+		4CE1CF1228FEB46300E6C30E /* Then.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE1CF1128FEB46300E6C30E /* Then.swift */; };
+		4CE1CF1428FEB6E900E6C30E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CE1CF1328FEB6E900E6C30E /* SystemConfiguration.framework */; };
+		4CE1CF1528FEB70500E6C30E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CE1CF1328FEB6E900E6C30E /* SystemConfiguration.framework */; };
+		4CE1CF1728FEB71C00E6C30E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CE1CF1628FEB71C00E6C30E /* UIKit.framework */; };
+		4CE1CF1928FEB8A400E6C30E /* leyns.ovpn in Resources */ = {isa = PBXBuildFile; fileRef = 4CE1CF1828FEB8A400E6C30E /* leyns.ovpn */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		4CE1CF0828FEB36900E6C30E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4CE1CED828FEB1F900E6C30E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4CE1CEFE28FEB36900E6C30E;
+			remoteInfo = tunnel;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		4CE1CF0E28FEB36900E6C30E /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				4CE1CF0A28FEB36900E6C30E /* tunnel.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		4C16188A2906F60A0029EB09 /* 7227-vui-animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "7227-vui-animation.json"; sourceTree = "<group>"; };
+		4C16188C2906F6540029EB09 /* TRVPN.ovpn */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TRVPN.ovpn; sourceTree = "<group>"; };
+		4C16188E2906FC9F0029EB09 /* Extension+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIView.swift"; sourceTree = "<group>"; };
+		4C3540272902B3FE00570BD9 /* 95680-purple-circle.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "95680-purple-circle.json"; sourceTree = "<group>"; };
+		4C3540292902B8FE00570BD9 /* 5785-checkmark.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "5785-checkmark.json"; sourceTree = "<group>"; };
+		4C35402B2902BCB900570BD9 /* 122729-vibecity-loader.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "122729-vibecity-loader.json"; sourceTree = "<group>"; };
+		4C35402D2902C6D600570BD9 /* 97670-tomato-error.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "97670-tomato-error.json"; sourceTree = "<group>"; };
 		4CE1CEE028FEB1F900E6C30E /* TR VPN.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TR VPN.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CE1CEE328FEB1F900E6C30E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4CE1CEE528FEB1F900E6C30E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		4CE1CEE728FEB1F900E6C30E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4CE1CEE728FEB1F900E6C30E /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		4CE1CEEA28FEB1F900E6C30E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4CE1CEEC28FEB1FA00E6C30E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4CE1CEEF28FEB1FA00E6C30E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4CE1CEF128FEB1FA00E6C30E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4CE1CEFA28FEB2FB00E6C30E /* TR VPN.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "TR VPN.entitlements"; sourceTree = "<group>"; };
+		4CE1CEFF28FEB36900E6C30E /* tunnel.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = tunnel.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		4CE1CF0128FEB36900E6C30E /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
+		4CE1CF0428FEB36900E6C30E /* PacketTunnelProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PacketTunnelProvider.swift; sourceTree = "<group>"; };
+		4CE1CF0628FEB36900E6C30E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4CE1CF0728FEB36900E6C30E /* tunnel.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = tunnel.entitlements; sourceTree = "<group>"; };
+		4CE1CF1128FEB46300E6C30E /* Then.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Then.swift; sourceTree = "<group>"; };
+		4CE1CF1328FEB6E900E6C30E /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		4CE1CF1628FEB71C00E6C30E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		4CE1CF1828FEB8A400E6C30E /* leyns.ovpn */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = leyns.ovpn; path = ../../leyns.ovpn; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,16 +90,44 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CE1CF1428FEB6E900E6C30E /* SystemConfiguration.framework in Frameworks */,
+				4CE1CEF928FEB2ED00E6C30E /* OpenVPNAdapter in Frameworks */,
+				4C3540202902A78600570BD9 /* Lottie in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4CE1CEFC28FEB36900E6C30E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4CE1CF0228FEB36900E6C30E /* NetworkExtension.framework in Frameworks */,
+				4CE1CF1728FEB71C00E6C30E /* UIKit.framework in Frameworks */,
+				4CE1CF1528FEB70500E6C30E /* SystemConfiguration.framework in Frameworks */,
+				4CE1CF1028FEB3A400E6C30E /* OpenVPNAdapter in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4C35402F2902C6DC00570BD9 /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				4C35402D2902C6D600570BD9 /* 97670-tomato-error.json */,
+				4C35402B2902BCB900570BD9 /* 122729-vibecity-loader.json */,
+				4C3540292902B8FE00570BD9 /* 5785-checkmark.json */,
+				4C3540272902B3FE00570BD9 /* 95680-purple-circle.json */,
+				4C16188A2906F60A0029EB09 /* 7227-vui-animation.json */,
+			);
+			path = Animations;
+			sourceTree = "<group>";
+		};
 		4CE1CED728FEB1F900E6C30E = {
 			isa = PBXGroup;
 			children = (
 				4CE1CEE228FEB1F900E6C30E /* TR VPN */,
+				4CE1CF0328FEB36900E6C30E /* tunnel */,
+				4CE1CF0028FEB36900E6C30E /* Frameworks */,
 				4CE1CEE128FEB1F900E6C30E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -49,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				4CE1CEE028FEB1F900E6C30E /* TR VPN.app */,
+				4CE1CEFF28FEB36900E6C30E /* tunnel.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -56,15 +144,41 @@
 		4CE1CEE228FEB1F900E6C30E /* TR VPN */ = {
 			isa = PBXGroup;
 			children = (
+				4C35402F2902C6DC00570BD9 /* Animations */,
+				4CE1CEFA28FEB2FB00E6C30E /* TR VPN.entitlements */,
 				4CE1CEE328FEB1F900E6C30E /* AppDelegate.swift */,
 				4CE1CEE528FEB1F900E6C30E /* SceneDelegate.swift */,
-				4CE1CEE728FEB1F900E6C30E /* ViewController.swift */,
+				4CE1CEE728FEB1F900E6C30E /* MainViewController.swift */,
+				4C16188E2906FC9F0029EB09 /* Extension+UIView.swift */,
+				4C16188C2906F6540029EB09 /* TRVPN.ovpn */,
 				4CE1CEE928FEB1F900E6C30E /* Main.storyboard */,
+				4CE1CF1828FEB8A400E6C30E /* leyns.ovpn */,
 				4CE1CEEC28FEB1FA00E6C30E /* Assets.xcassets */,
 				4CE1CEEE28FEB1FA00E6C30E /* LaunchScreen.storyboard */,
 				4CE1CEF128FEB1FA00E6C30E /* Info.plist */,
 			);
 			path = "TR VPN";
+			sourceTree = "<group>";
+		};
+		4CE1CF0028FEB36900E6C30E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4CE1CF1628FEB71C00E6C30E /* UIKit.framework */,
+				4CE1CF1328FEB6E900E6C30E /* SystemConfiguration.framework */,
+				4CE1CF0128FEB36900E6C30E /* NetworkExtension.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4CE1CF0328FEB36900E6C30E /* tunnel */ = {
+			isa = PBXGroup;
+			children = (
+				4CE1CF0428FEB36900E6C30E /* PacketTunnelProvider.swift */,
+				4CE1CF0628FEB36900E6C30E /* Info.plist */,
+				4CE1CF0728FEB36900E6C30E /* tunnel.entitlements */,
+				4CE1CF1128FEB46300E6C30E /* Then.swift */,
+			);
+			path = tunnel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -77,15 +191,41 @@
 				4CE1CEDC28FEB1F900E6C30E /* Sources */,
 				4CE1CEDD28FEB1F900E6C30E /* Frameworks */,
 				4CE1CEDE28FEB1F900E6C30E /* Resources */,
+				4CE1CF0E28FEB36900E6C30E /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4CE1CF0928FEB36900E6C30E /* PBXTargetDependency */,
+			);
+			name = "TR VPN";
+			packageProductDependencies = (
+				4CE1CEF828FEB2ED00E6C30E /* OpenVPNAdapter */,
+				4C35401F2902A78600570BD9 /* Lottie */,
+			);
+			productName = "TR VPN";
+			productReference = 4CE1CEE028FEB1F900E6C30E /* TR VPN.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4CE1CEFE28FEB36900E6C30E /* tunnel */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4CE1CF0B28FEB36900E6C30E /* Build configuration list for PBXNativeTarget "tunnel" */;
+			buildPhases = (
+				4CE1CEFB28FEB36900E6C30E /* Sources */,
+				4CE1CEFC28FEB36900E6C30E /* Frameworks */,
+				4CE1CEFD28FEB36900E6C30E /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "TR VPN";
-			productName = "TR VPN";
-			productReference = 4CE1CEE028FEB1F900E6C30E /* TR VPN.app */;
-			productType = "com.apple.product-type.application";
+			name = tunnel;
+			packageProductDependencies = (
+				4CE1CF0F28FEB3A400E6C30E /* OpenVPNAdapter */,
+			);
+			productName = tunnel;
+			productReference = 4CE1CEFF28FEB36900E6C30E /* tunnel.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -100,6 +240,9 @@
 					4CE1CEDF28FEB1F900E6C30E = {
 						CreatedOnToolsVersion = 14.0.1;
 					};
+					4CE1CEFE28FEB36900E6C30E = {
+						CreatedOnToolsVersion = 14.0.1;
+					};
 				};
 			};
 			buildConfigurationList = 4CE1CEDB28FEB1F900E6C30E /* Build configuration list for PBXProject "TR VPN" */;
@@ -111,11 +254,16 @@
 				Base,
 			);
 			mainGroup = 4CE1CED728FEB1F900E6C30E;
+			packageReferences = (
+				4CE1CEF728FEB2ED00E6C30E /* XCRemoteSwiftPackageReference "OpenVPNAdapter" */,
+				4C35401E2902A78500570BD9 /* XCRemoteSwiftPackageReference "lottie-ios" */,
+			);
 			productRefGroup = 4CE1CEE128FEB1F900E6C30E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				4CE1CEDF28FEB1F900E6C30E /* TR VPN */,
+				4CE1CEFE28FEB36900E6C30E /* tunnel */,
 			);
 		};
 /* End PBXProject section */
@@ -125,9 +273,23 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C35402C2902BCB900570BD9 /* 122729-vibecity-loader.json in Resources */,
+				4C16188B2906F60A0029EB09 /* 7227-vui-animation.json in Resources */,
 				4CE1CEF028FEB1FA00E6C30E /* LaunchScreen.storyboard in Resources */,
+				4C35402A2902B8FE00570BD9 /* 5785-checkmark.json in Resources */,
 				4CE1CEED28FEB1FA00E6C30E /* Assets.xcassets in Resources */,
+				4C35402E2902C6D600570BD9 /* 97670-tomato-error.json in Resources */,
+				4CE1CF1928FEB8A400E6C30E /* leyns.ovpn in Resources */,
+				4C3540282902B3FE00570BD9 /* 95680-purple-circle.json in Resources */,
 				4CE1CEEB28FEB1F900E6C30E /* Main.storyboard in Resources */,
+				4C16188D2906F6540029EB09 /* TRVPN.ovpn in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4CE1CEFD28FEB36900E6C30E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,13 +300,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4CE1CEE828FEB1F900E6C30E /* ViewController.swift in Sources */,
+				4CE1CEE828FEB1F900E6C30E /* MainViewController.swift in Sources */,
 				4CE1CEE428FEB1F900E6C30E /* AppDelegate.swift in Sources */,
+				4C16188F2906FC9F0029EB09 /* Extension+UIView.swift in Sources */,
 				4CE1CEE628FEB1F900E6C30E /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		4CE1CEFB28FEB36900E6C30E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4CE1CF1228FEB46300E6C30E /* Then.swift in Sources */,
+				4CE1CF0528FEB36900E6C30E /* PacketTunnelProvider.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4CE1CF0928FEB36900E6C30E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4CE1CEFE28FEB36900E6C30E /* tunnel */;
+			targetProxy = 4CE1CF0828FEB36900E6C30E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		4CE1CEE928FEB1F900E6C30E /* Main.storyboard */ = {
@@ -216,7 +396,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -270,7 +450,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -283,8 +463,10 @@
 		4CE1CEF528FEB1FA00E6C30E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "TR VPN/TR VPN.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 87898T57Q4;
@@ -293,8 +475,9 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -302,6 +485,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.iliagusarov.TR-VPN";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -311,8 +497,10 @@
 		4CE1CEF628FEB1FA00E6C30E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "TR VPN/TR VPN.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 87898T57Q4;
@@ -321,8 +509,9 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -330,6 +519,61 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.iliagusarov.TR-VPN";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		4CE1CF0C28FEB36900E6C30E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = tunnel/tunnel.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 87898T57Q4;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = tunnel/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = tunnel;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.iliagusarov.TR-VPN.tunnel";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4CE1CF0D28FEB36900E6C30E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = tunnel/tunnel.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 87898T57Q4;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = tunnel/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = tunnel;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.iliagusarov.TR-VPN.tunnel";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -357,7 +601,53 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		4CE1CF0B28FEB36900E6C30E /* Build configuration list for PBXNativeTarget "tunnel" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4CE1CF0C28FEB36900E6C30E /* Debug */,
+				4CE1CF0D28FEB36900E6C30E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4C35401E2902A78500570BD9 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+		4CE1CEF728FEB2ED00E6C30E /* XCRemoteSwiftPackageReference "OpenVPNAdapter" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ss-abramchuk/OpenVPNAdapter";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.8.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4C35401F2902A78600570BD9 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4C35401E2902A78500570BD9 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
+		4CE1CEF828FEB2ED00E6C30E /* OpenVPNAdapter */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4CE1CEF728FEB2ED00E6C30E /* XCRemoteSwiftPackageReference "OpenVPNAdapter" */;
+			productName = OpenVPNAdapter;
+		};
+		4CE1CF0F28FEB3A400E6C30E /* OpenVPNAdapter */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4CE1CEF728FEB2ED00E6C30E /* XCRemoteSwiftPackageReference "OpenVPNAdapter" */;
+			productName = OpenVPNAdapter;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 4CE1CED828FEB1F900E6C30E /* Project object */;
 }

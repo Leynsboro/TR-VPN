@@ -7,7 +7,25 @@
 		<key>TR VPN.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+		<key>tunnel.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
 			<integer>0</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>4CE1CEDF28FEB1F900E6C30E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4CE1CEFE28FEB36900E6C30E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>
