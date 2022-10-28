@@ -14,6 +14,7 @@ class MainViewController: UIViewController {
     var manager: NETunnelProviderManager?
     
     let animationView = LottieAnimationView()
+    let animationConnectedView = LottieAnimationView()
     let connectingView = LottieAnimationView()
     let connectedView = LottieAnimationView()
     let closeConnectionView = LottieAnimationView()
@@ -29,7 +30,7 @@ class MainViewController: UIViewController {
     
     let locationLabel: UILabel = {
         let label = UILabel()
-        label.text = "Moscow, Russia"
+        label.text = "Russia, Moscow"
         label.textColor = .white
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -42,15 +43,20 @@ class MainViewController: UIViewController {
         return image
     }()
     
-    lazy var locationStackView: UIStackView = {
-        let stackView = UIStackView()
-        stackView.axis = .horizontal
-        stackView.alignment = .center
-        stackView.distribution = .fill
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        [self.locationImage,
-            self.locationLabel].forEach { stackView.addArrangedSubview($0) }
-        return stackView
+    let locationArrow: UIImageView = {
+        let image = UIImageView(image: UIImage(systemName: "arrowtriangle.down.circle.fill"))
+        image.translatesAutoresizingMaskIntoConstraints = false
+        image.contentMode = .scaleAspectFit
+        image.tintColor = .white
+        return image
+    }()
+    
+    let locationChangeButton: UIButton = {
+        let button = UIButton()
+        button.backgroundColor = UIColor(red: 73/255, green: 137/255, blue: 183/255, alpha: 1)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.layer.cornerRadius = 15
+        return button
     }()
         
     override func viewDidLoad() {
@@ -64,14 +70,23 @@ class MainViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(restartAnimation), name: UIApplication.willEnterForegroundNotification, object: nil)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        animationView.play()
+        connectingView.play()
+        animationConnectedView.play()
+    }
+    
     @objc private func restartAnimation() {
         animationView.play()
         connectingView.play()
+        animationConnectedView.play()
     }
     
     // MARK: Button Action
     
     @objc private func buttonAction() {
+        connectButtonTapped.buttonPressed()
         if manager?.connection.status == .none || manager?.connection.status == .disconnected {
             establishVPNConnection()
             
@@ -83,7 +98,9 @@ class MainViewController: UIViewController {
             
             Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true) { timer in
                 if self.manager?.connection.status == .connected {
+                    
                     self.changeAnimation(with: true)
+                    
                     timer.invalidate()
                     self.connectingView.isHidden = true
                     self.connectedView.play() { _ in
@@ -111,8 +128,9 @@ class MainViewController: UIViewController {
 
             Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
                 if self.manager?.connection.status == .disconnected {
-                    self.animationView.animation = LottieAnimation.named("95680-purple-circle")
-                    self.animationView.play()
+                    
+                    self.changeAnimation(with: false)
+                    
                     timer.invalidate()
                     self.connectButtonTapped.setTitle("Connect", for: .normal)
                     print("Disconnected")
@@ -123,14 +141,11 @@ class MainViewController: UIViewController {
     }
     
     private func changeAnimation(with connect: Bool) {
+        
         if connect {
-            animationView.fadeOut(2, delay: 0) { _ in
-                self.animationView.animation = LottieAnimation.named("7227-vui-animation")
-                self.animationView.play()
-                self.animationView.fadeIn()
-            }
+            animationConnectedView.fadeIn()
         } else {
-            animationView.animation = LottieAnimation.named("95680-purple-circle")
+            animationConnectedView.fadeOut()
         }
     }
 }
@@ -141,23 +156,39 @@ extension MainViewController {
     
     private func configureNavbar() {
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "TR VPN", style: .done, target: self, action: nil)
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "gearshape"), style: .done, target: self, action: nil)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "gearshape"), style: .done, target: self, action: #selector(showSettings))
         navigationController?.navigationBar.tintColor = .white
     }
     
     private func setupUI() {
         
         setupAnimationView()
+        setupAnimationConnectedView()
         setupConnectingView()
         setupConnectedView()
         setupCloseConnectionView()
-        
-        view.addSubview(locationStackView)
+                
+        view.addSubview(locationChangeButton)
+        locationChangeButton.addSubview(locationImage)
+        locationChangeButton.addSubview(locationLabel)
+        locationChangeButton.addSubview(locationArrow)
+        locationChangeButton.addTarget(self, action: #selector(showServerList), for: .touchDown)
         
         connectButtonTapped.addTarget(self, action: #selector(buttonAction), for: .touchDown)
         view.addSubview(connectButtonTapped)
         
         applyConstraints()
+    }
+    
+    @objc private func showServerList() {
+        locationChangeButton.buttonPressed()
+        let slVC = UINavigationController(rootViewController: ServerListViewController())
+        present(slVC, animated: true)
+    }
+    
+    @objc private func showSettings() {
+        let slVC = SettingsViewController()
+        navigationController?.pushViewController(slVC, animated: true)
     }
     
     private func setupAnimationView() {
@@ -168,6 +199,17 @@ extension MainViewController {
         animationView.play()
         
         view.addSubview(animationView)
+    }
+    
+    private func setupAnimationConnectedView() {
+        animationConnectedView.animation = LottieAnimation.named("7227-vui-animation")
+        animationConnectedView.loopMode = .loop
+        animationConnectedView.contentMode = .scaleAspectFit
+        animationConnectedView.translatesAutoresizingMaskIntoConstraints = false
+        animationConnectedView.alpha = 0
+        animationConnectedView.play()
+        
+        view.addSubview(animationConnectedView)
     }
     
     private func setupConnectingView() {
@@ -208,6 +250,13 @@ extension MainViewController {
         ])
         
         NSLayoutConstraint.activate([
+            animationConnectedView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: view.frame.height / 6),
+            animationConnectedView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
+            animationConnectedView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
+            animationConnectedView.heightAnchor.constraint(equalToConstant: view.frame.height / 3)
+        ])
+        
+        NSLayoutConstraint.activate([
             connectingView.leadingAnchor.constraint(equalTo: animationView.leadingAnchor, constant: 60),
             connectingView.trailingAnchor.constraint(equalTo: animationView.trailingAnchor, constant: -60),
             connectingView.topAnchor.constraint(equalTo: animationView.topAnchor, constant: 60),
@@ -229,26 +278,56 @@ extension MainViewController {
         ])
         
         NSLayoutConstraint.activate([
-            locationStackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            locationStackView.topAnchor.constraint(equalTo: animationView.bottomAnchor, constant: 50),
-            locationStackView.heightAnchor.constraint(equalToConstant: 20),
-            locationStackView.widthAnchor.constraint(equalToConstant: 150)
+            locationImage.leadingAnchor.constraint(equalTo: locationChangeButton.leadingAnchor, constant: 10),
+            locationImage.topAnchor.constraint(equalTo: locationChangeButton.topAnchor, constant: 15),
+            locationImage.bottomAnchor.constraint(equalTo: locationChangeButton.bottomAnchor, constant: -15),
+            locationImage.widthAnchor.constraint(equalToConstant: 40)
         ])
         
+        NSLayoutConstraint.activate([
+            locationLabel.leadingAnchor.constraint(equalTo: locationImage.trailingAnchor, constant: 5),
+            locationLabel.trailingAnchor.constraint(equalTo: locationArrow.trailingAnchor, constant: -10),
+            locationLabel.topAnchor.constraint(equalTo: locationChangeButton.topAnchor, constant: 5),
+            locationLabel.bottomAnchor.constraint(equalTo: locationChangeButton.bottomAnchor, constant: -5)
+        ])
+        
+        NSLayoutConstraint.activate([
+            locationArrow.trailingAnchor.constraint(equalTo: locationChangeButton.trailingAnchor, constant: -15),
+            locationArrow.topAnchor.constraint(equalTo: locationChangeButton.topAnchor, constant: 15),
+            locationArrow.bottomAnchor.constraint(equalTo: locationChangeButton.bottomAnchor, constant: -15),
+            locationArrow.widthAnchor.constraint(equalToConstant: 20)
+        ])
+        
+        
+        //Settings of buttons
         if UIDevice.current.userInterfaceIdiom == .phone {
             NSLayoutConstraint.activate([
                 connectButtonTapped.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
                 connectButtonTapped.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
-                connectButtonTapped.topAnchor.constraint(equalTo: locationStackView.bottomAnchor, constant: 50),
+                connectButtonTapped.topAnchor.constraint(equalTo: locationChangeButton.bottomAnchor, constant: 20),
                 connectButtonTapped.heightAnchor.constraint(equalToConstant: 50)
+            ])
+            
+            NSLayoutConstraint.activate([
+                locationChangeButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
+                locationChangeButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
+                locationChangeButton.topAnchor.constraint(equalTo: animationView.bottomAnchor, constant: 50),
+                locationChangeButton.heightAnchor.constraint(equalToConstant: 50)
             ])
         } else if UIDevice.current.userInterfaceIdiom == .pad {
             let width = view.frame.size.width / 3
             NSLayoutConstraint.activate([
                 connectButtonTapped.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-                connectButtonTapped.topAnchor.constraint(equalTo: locationStackView.bottomAnchor, constant: 50),
+                connectButtonTapped.topAnchor.constraint(equalTo: locationChangeButton.bottomAnchor, constant: 20),
                 connectButtonTapped.heightAnchor.constraint(equalToConstant: 50),
                 connectButtonTapped.widthAnchor.constraint(equalToConstant: width)
+            ])
+            
+            NSLayoutConstraint.activate([
+                locationChangeButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+                locationChangeButton.topAnchor.constraint(equalTo: animationView.bottomAnchor, constant: 50),
+                locationChangeButton.heightAnchor.constraint(equalToConstant: 50),
+                locationChangeButton.widthAnchor.constraint(equalToConstant: width)
             ])
         }
         

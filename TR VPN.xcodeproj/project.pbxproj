@@ -8,17 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		4C16188B2906F60A0029EB09 /* 7227-vui-animation.json in Resources */ = {isa = PBXBuildFile; fileRef = 4C16188A2906F60A0029EB09 /* 7227-vui-animation.json */; };
-		4C16188D2906F6540029EB09 /* TRVPN.ovpn in Resources */ = {isa = PBXBuildFile; fileRef = 4C16188C2906F6540029EB09 /* TRVPN.ovpn */; };
 		4C16188F2906FC9F0029EB09 /* Extension+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C16188E2906FC9F0029EB09 /* Extension+UIView.swift */; };
+		4C1618912907FF210029EB09 /* ServerListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1618902907FF210029EB09 /* ServerListViewController.swift */; };
 		4C3540202902A78600570BD9 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 4C35401F2902A78600570BD9 /* Lottie */; };
 		4C3540282902B3FE00570BD9 /* 95680-purple-circle.json in Resources */ = {isa = PBXBuildFile; fileRef = 4C3540272902B3FE00570BD9 /* 95680-purple-circle.json */; };
 		4C35402A2902B8FE00570BD9 /* 5785-checkmark.json in Resources */ = {isa = PBXBuildFile; fileRef = 4C3540292902B8FE00570BD9 /* 5785-checkmark.json */; };
 		4C35402C2902BCB900570BD9 /* 122729-vibecity-loader.json in Resources */ = {isa = PBXBuildFile; fileRef = 4C35402B2902BCB900570BD9 /* 122729-vibecity-loader.json */; };
 		4C35402E2902C6D600570BD9 /* 97670-tomato-error.json in Resources */ = {isa = PBXBuildFile; fileRef = 4C35402D2902C6D600570BD9 /* 97670-tomato-error.json */; };
+		4C3DD80D290BE7E000346171 /* Extension+UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3DD80C290BE7E000346171 /* Extension+UIApplication.swift */; };
+		4C3DD810290C0C4000346171 /* YandexMobileAdsPackage in Frameworks */ = {isa = PBXBuildFile; productRef = 4C3DD80F290C0C4000346171 /* YandexMobileAdsPackage */; };
+		4C72C7F529098A0A0091F296 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C72C7F429098A0A0091F296 /* SettingsViewController.swift */; };
+		4C72C7FF290AD6B00091F296 /* leyns.ovpn in Resources */ = {isa = PBXBuildFile; fileRef = 4C72C7FE290AD6B00091F296 /* leyns.ovpn */; };
+		4C72C801290ADB270091F296 /* BrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C72C800290ADB270091F296 /* BrowserViewController.swift */; };
+		4C72C804290AFF2D0091F296 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C72C803290AFF2D0091F296 /* SettingsTableViewCell.swift */; };
 		4CE1CEE428FEB1F900E6C30E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE1CEE328FEB1F900E6C30E /* AppDelegate.swift */; };
 		4CE1CEE628FEB1F900E6C30E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE1CEE528FEB1F900E6C30E /* SceneDelegate.swift */; };
 		4CE1CEE828FEB1F900E6C30E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE1CEE728FEB1F900E6C30E /* MainViewController.swift */; };
-		4CE1CEEB28FEB1F900E6C30E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CE1CEE928FEB1F900E6C30E /* Main.storyboard */; };
 		4CE1CEED28FEB1FA00E6C30E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CE1CEEC28FEB1FA00E6C30E /* Assets.xcassets */; };
 		4CE1CEF028FEB1FA00E6C30E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CE1CEEE28FEB1FA00E6C30E /* LaunchScreen.storyboard */; };
 		4CE1CEF928FEB2ED00E6C30E /* OpenVPNAdapter in Frameworks */ = {isa = PBXBuildFile; productRef = 4CE1CEF828FEB2ED00E6C30E /* OpenVPNAdapter */; };
@@ -30,7 +35,6 @@
 		4CE1CF1428FEB6E900E6C30E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CE1CF1328FEB6E900E6C30E /* SystemConfiguration.framework */; };
 		4CE1CF1528FEB70500E6C30E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CE1CF1328FEB6E900E6C30E /* SystemConfiguration.framework */; };
 		4CE1CF1728FEB71C00E6C30E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CE1CF1628FEB71C00E6C30E /* UIKit.framework */; };
-		4CE1CF1928FEB8A400E6C30E /* leyns.ovpn in Resources */ = {isa = PBXBuildFile; fileRef = 4CE1CF1828FEB8A400E6C30E /* leyns.ovpn */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,17 +63,21 @@
 
 /* Begin PBXFileReference section */
 		4C16188A2906F60A0029EB09 /* 7227-vui-animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "7227-vui-animation.json"; sourceTree = "<group>"; };
-		4C16188C2906F6540029EB09 /* TRVPN.ovpn */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TRVPN.ovpn; sourceTree = "<group>"; };
 		4C16188E2906FC9F0029EB09 /* Extension+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIView.swift"; sourceTree = "<group>"; };
+		4C1618902907FF210029EB09 /* ServerListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerListViewController.swift; sourceTree = "<group>"; };
 		4C3540272902B3FE00570BD9 /* 95680-purple-circle.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "95680-purple-circle.json"; sourceTree = "<group>"; };
 		4C3540292902B8FE00570BD9 /* 5785-checkmark.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "5785-checkmark.json"; sourceTree = "<group>"; };
 		4C35402B2902BCB900570BD9 /* 122729-vibecity-loader.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "122729-vibecity-loader.json"; sourceTree = "<group>"; };
 		4C35402D2902C6D600570BD9 /* 97670-tomato-error.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "97670-tomato-error.json"; sourceTree = "<group>"; };
+		4C3DD80C290BE7E000346171 /* Extension+UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIApplication.swift"; sourceTree = "<group>"; };
+		4C72C7F429098A0A0091F296 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		4C72C7FE290AD6B00091F296 /* leyns.ovpn */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = leyns.ovpn; sourceTree = "<group>"; };
+		4C72C800290ADB270091F296 /* BrowserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserViewController.swift; sourceTree = "<group>"; };
+		4C72C803290AFF2D0091F296 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 		4CE1CEE028FEB1F900E6C30E /* TR VPN.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TR VPN.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CE1CEE328FEB1F900E6C30E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4CE1CEE528FEB1F900E6C30E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		4CE1CEE728FEB1F900E6C30E /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		4CE1CEEA28FEB1F900E6C30E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4CE1CEEC28FEB1FA00E6C30E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4CE1CEEF28FEB1FA00E6C30E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4CE1CEF128FEB1FA00E6C30E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -82,7 +90,6 @@
 		4CE1CF1128FEB46300E6C30E /* Then.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Then.swift; sourceTree = "<group>"; };
 		4CE1CF1328FEB6E900E6C30E /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		4CE1CF1628FEB71C00E6C30E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		4CE1CF1828FEB8A400E6C30E /* leyns.ovpn */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = leyns.ovpn; path = ../../leyns.ovpn; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +100,7 @@
 				4CE1CF1428FEB6E900E6C30E /* SystemConfiguration.framework in Frameworks */,
 				4CE1CEF928FEB2ED00E6C30E /* OpenVPNAdapter in Frameworks */,
 				4C3540202902A78600570BD9 /* Lottie in Frameworks */,
+				4C3DD810290C0C4000346171 /* YandexMobileAdsPackage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -122,6 +130,61 @@
 			path = Animations;
 			sourceTree = "<group>";
 		};
+		4C72C7F6290AD50A0091F296 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				4CE1CEE728FEB1F900E6C30E /* MainViewController.swift */,
+				4C1618902907FF210029EB09 /* ServerListViewController.swift */,
+				4C72C7F429098A0A0091F296 /* SettingsViewController.swift */,
+				4C72C800290ADB270091F296 /* BrowserViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		4C72C7F7290AD52B0091F296 /* Configurations */ = {
+			isa = PBXGroup;
+			children = (
+				4C72C7FE290AD6B00091F296 /* leyns.ovpn */,
+			);
+			path = Configurations;
+			sourceTree = "<group>";
+		};
+		4C72C7FB290AD58D0091F296 /* Extentions */ = {
+			isa = PBXGroup;
+			children = (
+				4C16188E2906FC9F0029EB09 /* Extension+UIView.swift */,
+				4C3DD80C290BE7E000346171 /* Extension+UIApplication.swift */,
+			);
+			path = Extentions;
+			sourceTree = "<group>";
+		};
+		4C72C7FC290AD5BB0091F296 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				4CE1CEEE28FEB1FA00E6C30E /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		4C72C7FD290AD5DA0091F296 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				4CE1CEFA28FEB2FB00E6C30E /* TR VPN.entitlements */,
+				4CE1CEE328FEB1F900E6C30E /* AppDelegate.swift */,
+				4CE1CEE528FEB1F900E6C30E /* SceneDelegate.swift */,
+				4CE1CEF128FEB1FA00E6C30E /* Info.plist */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		4C72C802290AFF090091F296 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4C72C803290AFF2D0091F296 /* SettingsTableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		4CE1CED728FEB1F900E6C30E = {
 			isa = PBXGroup;
 			children = (
@@ -144,18 +207,14 @@
 		4CE1CEE228FEB1F900E6C30E /* TR VPN */ = {
 			isa = PBXGroup;
 			children = (
+				4C72C802290AFF090091F296 /* Views */,
+				4C72C7FC290AD5BB0091F296 /* Storyboards */,
+				4C72C7FB290AD58D0091F296 /* Extentions */,
+				4C72C7F6290AD50A0091F296 /* ViewControllers */,
 				4C35402F2902C6DC00570BD9 /* Animations */,
-				4CE1CEFA28FEB2FB00E6C30E /* TR VPN.entitlements */,
-				4CE1CEE328FEB1F900E6C30E /* AppDelegate.swift */,
-				4CE1CEE528FEB1F900E6C30E /* SceneDelegate.swift */,
-				4CE1CEE728FEB1F900E6C30E /* MainViewController.swift */,
-				4C16188E2906FC9F0029EB09 /* Extension+UIView.swift */,
-				4C16188C2906F6540029EB09 /* TRVPN.ovpn */,
-				4CE1CEE928FEB1F900E6C30E /* Main.storyboard */,
-				4CE1CF1828FEB8A400E6C30E /* leyns.ovpn */,
+				4C72C7FD290AD5DA0091F296 /* App */,
+				4C72C7F7290AD52B0091F296 /* Configurations */,
 				4CE1CEEC28FEB1FA00E6C30E /* Assets.xcassets */,
-				4CE1CEEE28FEB1FA00E6C30E /* LaunchScreen.storyboard */,
-				4CE1CEF128FEB1FA00E6C30E /* Info.plist */,
 			);
 			path = "TR VPN";
 			sourceTree = "<group>";
@@ -202,6 +261,7 @@
 			packageProductDependencies = (
 				4CE1CEF828FEB2ED00E6C30E /* OpenVPNAdapter */,
 				4C35401F2902A78600570BD9 /* Lottie */,
+				4C3DD80F290C0C4000346171 /* YandexMobileAdsPackage */,
 			);
 			productName = "TR VPN";
 			productReference = 4CE1CEE028FEB1F900E6C30E /* TR VPN.app */;
@@ -257,6 +317,7 @@
 			packageReferences = (
 				4CE1CEF728FEB2ED00E6C30E /* XCRemoteSwiftPackageReference "OpenVPNAdapter" */,
 				4C35401E2902A78500570BD9 /* XCRemoteSwiftPackageReference "lottie-ios" */,
+				4C3DD80E290C0C4000346171 /* XCRemoteSwiftPackageReference "yandex-ads-sdk-swift" */,
 			);
 			productRefGroup = 4CE1CEE128FEB1F900E6C30E /* Products */;
 			projectDirPath = "";
@@ -279,10 +340,8 @@
 				4C35402A2902B8FE00570BD9 /* 5785-checkmark.json in Resources */,
 				4CE1CEED28FEB1FA00E6C30E /* Assets.xcassets in Resources */,
 				4C35402E2902C6D600570BD9 /* 97670-tomato-error.json in Resources */,
-				4CE1CF1928FEB8A400E6C30E /* leyns.ovpn in Resources */,
 				4C3540282902B3FE00570BD9 /* 95680-purple-circle.json in Resources */,
-				4CE1CEEB28FEB1F900E6C30E /* Main.storyboard in Resources */,
-				4C16188D2906F6540029EB09 /* TRVPN.ovpn in Resources */,
+				4C72C7FF290AD6B00091F296 /* leyns.ovpn in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,9 +360,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				4CE1CEE828FEB1F900E6C30E /* MainViewController.swift in Sources */,
+				4C72C801290ADB270091F296 /* BrowserViewController.swift in Sources */,
+				4C72C804290AFF2D0091F296 /* SettingsTableViewCell.swift in Sources */,
 				4CE1CEE428FEB1F900E6C30E /* AppDelegate.swift in Sources */,
+				4C1618912907FF210029EB09 /* ServerListViewController.swift in Sources */,
 				4C16188F2906FC9F0029EB09 /* Extension+UIView.swift in Sources */,
 				4CE1CEE628FEB1F900E6C30E /* SceneDelegate.swift in Sources */,
+				4C3DD80D290BE7E000346171 /* Extension+UIApplication.swift in Sources */,
+				4C72C7F529098A0A0091F296 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -327,14 +391,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		4CE1CEE928FEB1F900E6C30E /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4CE1CEEA28FEB1F900E6C30E /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		4CE1CEEE28FEB1FA00E6C30E /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -396,7 +452,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -450,7 +506,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -466,15 +522,14 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = "TR VPN/TR VPN.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "TR VPN/App/TR VPN.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 0.8.3;
 				DEVELOPMENT_TEAM = 87898T57Q4;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "TR VPN/Info.plist";
+				INFOPLIST_FILE = "TR VPN/App/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -482,7 +537,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 0.8.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.iliagusarov.TR-VPN";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -500,15 +555,14 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = "TR VPN/TR VPN.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "TR VPN/App/TR VPN.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 0.8.3;
 				DEVELOPMENT_TEAM = 87898T57Q4;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "TR VPN/Info.plist";
+				INFOPLIST_FILE = "TR VPN/App/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -516,7 +570,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 0.8.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.iliagusarov.TR-VPN";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -621,6 +675,14 @@
 				minimumVersion = 3.0.0;
 			};
 		};
+		4C3DD80E290C0C4000346171 /* XCRemoteSwiftPackageReference "yandex-ads-sdk-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/yandexmobile/yandex-ads-sdk-swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 		4CE1CEF728FEB2ED00E6C30E /* XCRemoteSwiftPackageReference "OpenVPNAdapter" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ss-abramchuk/OpenVPNAdapter";
@@ -636,6 +698,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 4C35401E2902A78500570BD9 /* XCRemoteSwiftPackageReference "lottie-ios" */;
 			productName = Lottie;
+		};
+		4C3DD80F290C0C4000346171 /* YandexMobileAdsPackage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4C3DD80E290C0C4000346171 /* XCRemoteSwiftPackageReference "yandex-ads-sdk-swift" */;
+			productName = YandexMobileAdsPackage;
 		};
 		4CE1CEF828FEB2ED00E6C30E /* OpenVPNAdapter */ = {
 			isa = XCSwiftPackageProductDependency;
