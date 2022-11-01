@@ -12,20 +12,25 @@ class SettingsTableViewCell: UITableViewCell {
     private let mainLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = .white
         return label
     }()
     
-    private let secondLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
+    private let actionImage: UIImageView = {
+        let image = UIImageView()
+        image.translatesAutoresizingMaskIntoConstraints = false
+        image.image = UIImage(systemName: "chevron.right.circle.fill")
+        image.clipsToBounds = true
+        image.contentMode = .scaleAspectFit
+        image.tintColor = .white
+        return image
     }()
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         addSubview(mainLabel)
-        addSubview(secondLabel)
+        addSubview(actionImage)
         
         applyConstraints()
     }
@@ -34,18 +39,17 @@ class SettingsTableViewCell: UITableViewCell {
         fatalError()
     }
     
-    func configure(mainText: String, secondText: String) {
+    func configure(mainText: String) {
         mainLabel.text = mainText
-        secondLabel.text = secondText
     }
     
     private func applyConstraints() {
         NSLayoutConstraint.activate([
             mainLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
             mainLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
-            mainLabel.trailingAnchor.constraint(equalTo: secondLabel.leadingAnchor, constant: 10),
-            secondLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
-            secondLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20)
+            mainLabel.trailingAnchor.constraint(equalTo: actionImage.leadingAnchor, constant: 10),
+            actionImage.centerYAnchor.constraint(equalTo: centerYAnchor),
+            actionImage.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20)
         ])
     }
 

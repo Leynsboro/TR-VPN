@@ -17,9 +17,9 @@
 		4C35402E2902C6D600570BD9 /* 97670-tomato-error.json in Resources */ = {isa = PBXBuildFile; fileRef = 4C35402D2902C6D600570BD9 /* 97670-tomato-error.json */; };
 		4C3DD80D290BE7E000346171 /* Extension+UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3DD80C290BE7E000346171 /* Extension+UIApplication.swift */; };
 		4C3DD810290C0C4000346171 /* YandexMobileAdsPackage in Frameworks */ = {isa = PBXBuildFile; productRef = 4C3DD80F290C0C4000346171 /* YandexMobileAdsPackage */; };
+		4C3DD812290C0E3900346171 /* YandexMobileAdsBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4C3DD811290C0E3900346171 /* YandexMobileAdsBundle.bundle */; };
 		4C72C7F529098A0A0091F296 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C72C7F429098A0A0091F296 /* SettingsViewController.swift */; };
 		4C72C7FF290AD6B00091F296 /* leyns.ovpn in Resources */ = {isa = PBXBuildFile; fileRef = 4C72C7FE290AD6B00091F296 /* leyns.ovpn */; };
-		4C72C801290ADB270091F296 /* BrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C72C800290ADB270091F296 /* BrowserViewController.swift */; };
 		4C72C804290AFF2D0091F296 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C72C803290AFF2D0091F296 /* SettingsTableViewCell.swift */; };
 		4CE1CEE428FEB1F900E6C30E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE1CEE328FEB1F900E6C30E /* AppDelegate.swift */; };
 		4CE1CEE628FEB1F900E6C30E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE1CEE528FEB1F900E6C30E /* SceneDelegate.swift */; };
@@ -70,9 +70,9 @@
 		4C35402B2902BCB900570BD9 /* 122729-vibecity-loader.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "122729-vibecity-loader.json"; sourceTree = "<group>"; };
 		4C35402D2902C6D600570BD9 /* 97670-tomato-error.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "97670-tomato-error.json"; sourceTree = "<group>"; };
 		4C3DD80C290BE7E000346171 /* Extension+UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIApplication.swift"; sourceTree = "<group>"; };
+		4C3DD811290C0E3900346171 /* YandexMobileAdsBundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = YandexMobileAdsBundle.bundle; sourceTree = "<group>"; };
 		4C72C7F429098A0A0091F296 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		4C72C7FE290AD6B00091F296 /* leyns.ovpn */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = leyns.ovpn; sourceTree = "<group>"; };
-		4C72C800290ADB270091F296 /* BrowserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserViewController.swift; sourceTree = "<group>"; };
 		4C72C803290AFF2D0091F296 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 		4CE1CEE028FEB1F900E6C30E /* TR VPN.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TR VPN.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CE1CEE328FEB1F900E6C30E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -136,7 +136,6 @@
 				4CE1CEE728FEB1F900E6C30E /* MainViewController.swift */,
 				4C1618902907FF210029EB09 /* ServerListViewController.swift */,
 				4C72C7F429098A0A0091F296 /* SettingsViewController.swift */,
-				4C72C800290ADB270091F296 /* BrowserViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -188,6 +187,7 @@
 		4CE1CED728FEB1F900E6C30E = {
 			isa = PBXGroup;
 			children = (
+				4C3DD811290C0E3900346171 /* YandexMobileAdsBundle.bundle */,
 				4CE1CEE228FEB1F900E6C30E /* TR VPN */,
 				4CE1CF0328FEB36900E6C30E /* tunnel */,
 				4CE1CF0028FEB36900E6C30E /* Frameworks */,
@@ -207,11 +207,11 @@
 		4CE1CEE228FEB1F900E6C30E /* TR VPN */ = {
 			isa = PBXGroup;
 			children = (
-				4C72C802290AFF090091F296 /* Views */,
-				4C72C7FC290AD5BB0091F296 /* Storyboards */,
 				4C72C7FB290AD58D0091F296 /* Extentions */,
+				4C72C802290AFF090091F296 /* Views */,
 				4C72C7F6290AD50A0091F296 /* ViewControllers */,
 				4C35402F2902C6DC00570BD9 /* Animations */,
+				4C72C7FC290AD5BB0091F296 /* Storyboards */,
 				4C72C7FD290AD5DA0091F296 /* App */,
 				4C72C7F7290AD52B0091F296 /* Configurations */,
 				4CE1CEEC28FEB1FA00E6C30E /* Assets.xcassets */,
@@ -334,6 +334,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C3DD812290C0E3900346171 /* YandexMobileAdsBundle.bundle in Resources */,
 				4C35402C2902BCB900570BD9 /* 122729-vibecity-loader.json in Resources */,
 				4C16188B2906F60A0029EB09 /* 7227-vui-animation.json in Resources */,
 				4CE1CEF028FEB1FA00E6C30E /* LaunchScreen.storyboard in Resources */,
@@ -360,7 +361,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4CE1CEE828FEB1F900E6C30E /* MainViewController.swift in Sources */,
-				4C72C801290ADB270091F296 /* BrowserViewController.swift in Sources */,
 				4C72C804290AFF2D0091F296 /* SettingsTableViewCell.swift in Sources */,
 				4CE1CEE428FEB1F900E6C30E /* AppDelegate.swift in Sources */,
 				4C1618912907FF210029EB09 /* ServerListViewController.swift in Sources */,
@@ -406,6 +406,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				APP_BUILD = 2;
+				APP_VERSION = 0.4.2;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -456,6 +458,7 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -466,6 +469,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				APP_BUILD = 2;
+				APP_VERSION = 0.4.2;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -509,6 +514,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -524,20 +530,21 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "TR VPN/App/TR VPN.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 0.8.3;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 87898T57Q4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "TR VPN/App/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.8.3;
+				MARKETING_VERSION = 0.4.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.iliagusarov.TR-VPN";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -557,20 +564,21 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "TR VPN/App/TR VPN.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 0.8.3;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 87898T57Q4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "TR VPN/App/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.8.3;
+				MARKETING_VERSION = 0.4.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.iliagusarov.TR-VPN";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -587,18 +595,18 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = tunnel/tunnel.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 87898T57Q4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = tunnel/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = tunnel;
+				INFOPLIST_KEY_CFBundleDisplayName = "OpenVPN Tunnel Provider";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 0.4.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.iliagusarov.TR-VPN.tunnel";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -613,18 +621,18 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = tunnel/tunnel.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 87898T57Q4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = tunnel/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = tunnel;
+				INFOPLIST_KEY_CFBundleDisplayName = "OpenVPN Tunnel Provider";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 0.4.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.iliagusarov.TR-VPN.tunnel";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;

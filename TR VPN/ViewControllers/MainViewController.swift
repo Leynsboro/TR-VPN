@@ -63,18 +63,15 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = UIColor(red: 0/255, green: 42/255, blue: 72/255, alpha: 1)
         
-        setupUI()
-        
         configureNavbar()
-                
+        setupUI()
+            
         NotificationCenter.default.addObserver(self, selector: #selector(restartAnimation), name: UIApplication.willEnterForegroundNotification, object: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        animationView.play()
-        connectingView.play()
-        animationConnectedView.play()
+        restartAnimation()
     }
     
     @objc private func restartAnimation() {
@@ -84,9 +81,9 @@ class MainViewController: UIViewController {
     }
     
     // MARK: Button Action
-    
-    @objc private func buttonAction() {
-        connectButtonTapped.buttonPressed()
+    @objc private func connectButtonAction() {
+        connectButtonTapped.animationButtonPressed()
+        
         if manager?.connection.status == .none || manager?.connection.status == .disconnected {
             establishVPNConnection()
             
@@ -98,10 +95,10 @@ class MainViewController: UIViewController {
             
             Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true) { timer in
                 if self.manager?.connection.status == .connected {
+                    timer.invalidate()
                     
                     self.changeAnimation(with: true)
                     
-                    timer.invalidate()
                     self.connectingView.isHidden = true
                     self.connectedView.play() { _ in
                         self.connectedView.stop()
@@ -128,10 +125,10 @@ class MainViewController: UIViewController {
 
             Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
                 if self.manager?.connection.status == .disconnected {
+                    timer.invalidate()
                     
                     self.changeAnimation(with: false)
                     
-                    timer.invalidate()
                     self.connectButtonTapped.setTitle("Connect", for: .normal)
                     print("Disconnected")
                 }
@@ -141,7 +138,6 @@ class MainViewController: UIViewController {
     }
     
     private func changeAnimation(with connect: Bool) {
-        
         if connect {
             animationConnectedView.fadeIn()
         } else {
@@ -158,6 +154,7 @@ extension MainViewController {
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "TR VPN", style: .done, target: self, action: nil)
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "gearshape"), style: .done, target: self, action: #selector(showSettings))
         navigationController?.navigationBar.tintColor = .white
+        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
     }
     
     private func setupUI() {
@@ -174,14 +171,14 @@ extension MainViewController {
         locationChangeButton.addSubview(locationArrow)
         locationChangeButton.addTarget(self, action: #selector(showServerList), for: .touchDown)
         
-        connectButtonTapped.addTarget(self, action: #selector(buttonAction), for: .touchDown)
+        connectButtonTapped.addTarget(self, action: #selector(connectButtonAction), for: .touchDown)
         view.addSubview(connectButtonTapped)
         
         applyConstraints()
     }
     
     @objc private func showServerList() {
-        locationChangeButton.buttonPressed()
+        locationChangeButton.animationButtonPressed()
         let slVC = UINavigationController(rootViewController: ServerListViewController())
         present(slVC, animated: true)
     }
@@ -304,7 +301,7 @@ extension MainViewController {
             NSLayoutConstraint.activate([
                 connectButtonTapped.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
                 connectButtonTapped.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
-                connectButtonTapped.topAnchor.constraint(equalTo: locationChangeButton.bottomAnchor, constant: 20),
+                connectButtonTapped.topAnchor.constraint(equalTo: locationChangeButton.bottomAnchor, constant: 10),
                 connectButtonTapped.heightAnchor.constraint(equalToConstant: 50)
             ])
             
@@ -318,7 +315,7 @@ extension MainViewController {
             let width = view.frame.size.width / 3
             NSLayoutConstraint.activate([
                 connectButtonTapped.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-                connectButtonTapped.topAnchor.constraint(equalTo: locationChangeButton.bottomAnchor, constant: 20),
+                connectButtonTapped.topAnchor.constraint(equalTo: locationChangeButton.bottomAnchor, constant: 10),
                 connectButtonTapped.heightAnchor.constraint(equalToConstant: 50),
                 connectButtonTapped.widthAnchor.constraint(equalToConstant: width)
             ])
