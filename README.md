@@ -1,13 +1,13 @@
 ### TR-VPN
 ## Beauty VPN Client with openVPNAdapter
 
-<p align="center"> How to install VPN server and client?</p>
+<h2 align="center"> How to install VPN server and client?</h2>
 
-<p>Here is guide to install <a src="https://github.com/Nyr/openvpn-install">openVPNServer</a></p>
-<p>Here is guide to create  <a src="https://betterprogramming.pub/how-to-build-an-openvpn-client-on-ios-c8f927c11e80">openVPNClient</a></p>
-<p>Here is the vps that i ordered <a src="https://www.reg.ru/?rlink=reflink-10759625">reg.ru</a></p>
+<p>Here is guide to install <a href="https://github.com/Nyr/openvpn-install">openVPNServer</a></p>
+<p>Here is guide to create  <a href="https://betterprogramming.pub/how-to-build-an-openvpn-client-on-ios-c8f927c11e80">openVPNClient</a></p>
+<p>Here is the vps that i ordered <a href="https://www.reg.ru/?rlink=reflink-10759625">reg.ru</a></p>
 
-## I ordered VPS with ISPManager for the simplest setup openVPNServer and something more... ;)
+<p>I ordered VPS with ISPManager for the simplest setup openVPNServer and something more... ;)</p>
 
 ## 🦾 Capabilities
   - **Connect to VPS server**
@@ -26,5 +26,5 @@
   - **Delegates**
  
 ## 🫀 Libraries
-  - **Lottie [(https://github.com/airbnb/lottie-ios)](#https://github.com/airbnb/lottie-ios)**
-  - **OpenVPNAdapter [(https://github.com/ss-abramchuk/OpenVPNAdapter)](#https://github.com/ss-abramchuk/OpenVPNAdapter)**
+  - **Lottie [(https://github.com/airbnb/lottie-ios)](https://github.com/airbnb/lottie-ios)**
+  - **OpenVPNAdapter [(https://github.com/ss-abramchuk/OpenVPNAdapter)](https://github.com/ss-abramchuk/OpenVPNAdapter)**
