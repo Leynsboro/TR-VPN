@@ -2,52 +2,40 @@
 //  ServerListViewController.swift
 //  TR VPN
 //
-//  Created by Илья Гусаров on 25.10.2022.
+//  Created by Ilia Gusarov on 25.10.2022.
 //
 
 import UIKit
 
-class ServerListViewController: UIViewController {
+class ServerListViewController: UIViewController, UINavigationControllerDelegate {
     
-    private let firstTitleLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Oooops..."
-        label.font = label.font.withSize(24)
-        label.textAlignment = .center
-        label.textColor = .white
-        return label
-    }()
+    var delegate: MainViewController?
     
-    private let descriptionLabel: UILabel = {
-        let label = UILabel()
-        label.text = "So far we have only one server"
-        label.font = label.font.withSize(18)
-        label.textAlignment = .center
-        label.textColor = .white
-        label.numberOfLines = 0
-        return label
-    }()
+    private var serverList: [Server]!
     
-    lazy var labelsStackView: UIStackView = {
-        let stack = UIStackView()
-        stack.axis = .vertical
-        stack.alignment = .center
-        stack.distribution = .equalSpacing
-        stack.spacing = 5
-        stack.translatesAutoresizingMaskIntoConstraints = false
-        [firstTitleLabel,
-         descriptionLabel].forEach { stack.addArrangedSubview($0) }
-        return stack
+    private let serverListTableView: UITableView = {
+        let tableView = UITableView()
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.layer.cornerRadius = 15
+        tableView.register(CustomTableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView.tintColor = .white
+        tableView.backgroundColor = UIColor(red: 15/255, green: 76/255, blue: 120/255, alpha: 1)
+        tableView.separatorColor = .gray
+        return tableView
     }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         view.backgroundColor = UIColor(red: 0/255, green: 40/255, blue: 68/255, alpha: 1)
-    
-        view.addSubview(labelsStackView)        
         
-        setNavBar()
+        serverListTableView.dataSource = self
+        serverListTableView.delegate = self
+        
+        view.addSubview(serverListTableView)
+        
+        serverList = Server.getServers()
+        
         applyConstraints()
     }
                                                             
@@ -55,18 +43,50 @@ class ServerListViewController: UIViewController {
         dismiss(animated: true)
     }
     
-    private func setNavBar() {
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(closeView))
-        navigationController?.navigationBar.tintColor = .white
-    }
-    
     private func applyConstraints() {
         NSLayoutConstraint.activate([
-            labelsStackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            labelsStackView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            labelsStackView.widthAnchor.constraint(equalToConstant: view.frame.width / 2)
+            serverListTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
+            serverListTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
+            serverListTableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
+            serverListTableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20)
         ])
     }
- 
 
+}
+
+extension ServerListViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        serverList.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? CustomTableViewCell else { return UITableViewCell() }
+        
+        let server = serverList[indexPath.row]
+        
+        cell.configureServerList(mainText: server.region, countryImage: server.flag)
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        60
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        let server = serverList[indexPath.row]
+        
+        serverChosen(server: server)
+    }
+    
+    
+}
+
+extension ServerListViewController {
+    private func serverChosen(server: Server) {
+        delegate?.updateChosenServer(server: server)
+        dismiss(animated: true)
+    }
 }

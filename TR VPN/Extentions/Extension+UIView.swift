@@ -2,7 +2,7 @@
 //  Extension+UIView.swift
 //  TR VPN
 //
-//  Created by Илья Гусаров on 24.10.2022.
+//  Created by Ilia Gusarov on 24.10.2022.
 //
 
 import Foundation

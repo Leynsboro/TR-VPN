@@ -2,24 +2,25 @@
 //  ViewController.swift
 //  TR VPN
 //
-//  Created by Илья Гусаров on 18.10.2022.
+//  Created by Ilia Gusarov on 18.10.2022.
 //
 
 import UIKit
-import NetworkExtension
 import Lottie
 
+protocol ServerListViewControllerDelegate {
+    func updateChosenServer(server: Server)
+}
+
 class MainViewController: UIViewController {
+            
+    private let disconnectedNetworkAnimationView = LottieAnimationView()
+    private let connectedNetworkAnimationView = LottieAnimationView()
+    private let connectingToNetworkAnimationView = LottieAnimationView()
+    private let succesfullyConnectedAnimationView = LottieAnimationView()
+    private let succesfullyDisconnectedAnimationView = LottieAnimationView()
     
-    var manager: NETunnelProviderManager?
-    
-    let animationView = LottieAnimationView()
-    let animationConnectedView = LottieAnimationView()
-    let connectingView = LottieAnimationView()
-    let connectedView = LottieAnimationView()
-    let closeConnectionView = LottieAnimationView()
-    
-    let connectButtonTapped: UIButton = {
+    private let connectButtonTapped: UIButton = {
         let button = UIButton()
         button.setTitle("Connect", for: .normal)
         button.backgroundColor = UIColor(red: 0/255, green: 106/255, blue: 183/255, alpha: 1)
@@ -28,7 +29,7 @@ class MainViewController: UIViewController {
         return button
     }()
     
-    let locationLabel: UILabel = {
+    private let locationLabel: UILabel = {
         let label = UILabel()
         label.text = "Russia, Moscow"
         label.textColor = .white
@@ -36,14 +37,14 @@ class MainViewController: UIViewController {
         return label
     }()
     
-    let locationImage: UIImageView = {
-        let image = UIImageView(image: UIImage(named: "location"))
+    private let locationImage: UIImageView = {
+        let image = UIImageView(image: UIImage(named: "russiaFlag"))
         image.translatesAutoresizingMaskIntoConstraints = false
         image.contentMode = .scaleAspectFit
         return image
     }()
     
-    let locationArrow: UIImageView = {
+    private let locationArrow: UIImageView = {
         let image = UIImageView(image: UIImage(systemName: "arrowtriangle.down.circle.fill"))
         image.translatesAutoresizingMaskIntoConstraints = false
         image.contentMode = .scaleAspectFit
@@ -51,7 +52,7 @@ class MainViewController: UIViewController {
         return image
     }()
     
-    let locationChangeButton: UIButton = {
+    private let locationChangeButton: UIButton = {
         let button = UIButton()
         button.backgroundColor = UIColor(red: 73/255, green: 137/255, blue: 183/255, alpha: 1)
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -65,7 +66,7 @@ class MainViewController: UIViewController {
         
         configureNavbar()
         setupUI()
-            
+                            
         NotificationCenter.default.addObserver(self, selector: #selector(restartAnimation), name: UIApplication.willEnterForegroundNotification, object: nil)
     }
     
@@ -75,56 +76,59 @@ class MainViewController: UIViewController {
     }
     
     @objc private func restartAnimation() {
-        animationView.play()
-        connectingView.play()
-        animationConnectedView.play()
+        disconnectedNetworkAnimationView.play()
+        connectingToNetworkAnimationView.play()
+        connectedNetworkAnimationView.play()
     }
+}
+
+// MARK: Button Actions
+
+extension MainViewController {
     
-    // MARK: Button Action
     @objc private func connectButtonAction() {
         connectButtonTapped.animationButtonPressed()
         
-        if manager?.connection.status == .none || manager?.connection.status == .disconnected {
-            establishVPNConnection()
+        if VpnManager.shared.connectionStatus == .none || VpnManager.shared.connectionStatus == .disconnected {
+            VpnManager.shared.establishVPNConnection(configName: "yourConfig")
             
             print("Connecting")
             
-            connectingView.isHidden = false
+            connectingToNetworkAnimationView.isHidden = false
             
             connectButtonTapped.setTitle("Connecting...", for: .normal)
             
             Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true) { timer in
-                if self.manager?.connection.status == .connected {
+                if VpnManager.shared.connectionStatus == .connected {
                     timer.invalidate()
                     
                     self.changeAnimation(with: true)
                     
-                    self.connectingView.isHidden = true
-                    self.connectedView.play() { _ in
-                        self.connectedView.stop()
+                    self.connectingToNetworkAnimationView.isHidden = true
+                    self.succesfullyConnectedAnimationView.play() { _ in
+                        self.succesfullyConnectedAnimationView.stop()
                     }
                     self.connectButtonTapped.setTitle("Connected", for: .normal)
                     print("Connected!")
-                } else if self.manager?.connection.status == .disconnected {
+                } else if VpnManager.shared.connectionStatus == .disconnected {
                     timer.invalidate()
                 }
             }
-        } else if manager?.connection.status == .connected || manager?.connection.status == .connecting {
-            stopConnection()
+        } else if VpnManager.shared.connectionStatus == .connected || VpnManager.shared.connectionStatus == .connecting {
+            VpnManager.shared.stopConnection()
 
             print("Disconnecting")
 
-            connectingView.isHidden = true
+            connectingToNetworkAnimationView.isHidden = true
 
-            closeConnectionView.play() { _ in
-                self.closeConnectionView.stop()
-                self.connectedView.stop()
+            succesfullyDisconnectedAnimationView.play() { _ in
+                self.succesfullyDisconnectedAnimationView.stop()
             }
 
             connectButtonTapped.setTitle("Disconnecting...", for: .normal)
 
             Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
-                if self.manager?.connection.status == .disconnected {
+                if VpnManager.shared.connectionStatus == .disconnected {
                     timer.invalidate()
                     
                     self.changeAnimation(with: false)
@@ -137,12 +141,16 @@ class MainViewController: UIViewController {
         
     }
     
-    private func changeAnimation(with connect: Bool) {
-        if connect {
-            animationConnectedView.fadeIn()
-        } else {
-            animationConnectedView.fadeOut()
-        }
+    @objc private func showServerList() {
+        locationChangeButton.animationButtonPressed()
+        let slVC = ServerListViewController()
+        slVC.delegate = self
+        present(slVC, animated: true)
+    }
+    
+    @objc private func showSettings() {
+        let slVC = SettingsViewController()
+        navigationController?.pushViewController(slVC, animated: true)
     }
 }
 
@@ -176,102 +184,99 @@ extension MainViewController {
         
         applyConstraints()
     }
-    
-    @objc private func showServerList() {
-        locationChangeButton.animationButtonPressed()
-        let slVC = UINavigationController(rootViewController: ServerListViewController())
-        present(slVC, animated: true)
-    }
-    
-    @objc private func showSettings() {
-        let slVC = SettingsViewController()
-        navigationController?.pushViewController(slVC, animated: true)
-    }
-    
+      
     private func setupAnimationView() {
-        animationView.animation = LottieAnimation.named("95680-purple-circle")
-        animationView.loopMode = .loop
-        animationView.contentMode = .scaleAspectFit
-        animationView.translatesAutoresizingMaskIntoConstraints = false
-        animationView.play()
+        disconnectedNetworkAnimationView.animation = LottieAnimation.named("disconnectedView")
+        disconnectedNetworkAnimationView.loopMode = .loop
+        disconnectedNetworkAnimationView.contentMode = .scaleAspectFit
+        disconnectedNetworkAnimationView.translatesAutoresizingMaskIntoConstraints = false
+        disconnectedNetworkAnimationView.play()
         
-        view.addSubview(animationView)
+        view.addSubview(disconnectedNetworkAnimationView)
     }
     
     private func setupAnimationConnectedView() {
-        animationConnectedView.animation = LottieAnimation.named("7227-vui-animation")
-        animationConnectedView.loopMode = .loop
-        animationConnectedView.contentMode = .scaleAspectFit
-        animationConnectedView.translatesAutoresizingMaskIntoConstraints = false
-        animationConnectedView.alpha = 0
-        animationConnectedView.play()
+        connectedNetworkAnimationView.animation = LottieAnimation.named("animationConnectedView")
+        connectedNetworkAnimationView.loopMode = .loop
+        connectedNetworkAnimationView.contentMode = .scaleAspectFit
+        connectedNetworkAnimationView.translatesAutoresizingMaskIntoConstraints = false
+        connectedNetworkAnimationView.alpha = 0
+        connectedNetworkAnimationView.play()
         
-        view.addSubview(animationConnectedView)
+        view.addSubview(connectedNetworkAnimationView)
     }
     
     private func setupConnectingView() {
-        connectingView.animation = LottieAnimation.named("122729-vibecity-loader")
-        connectingView.loopMode = .loop
-        connectingView.contentMode = .scaleAspectFit
-        connectingView.translatesAutoresizingMaskIntoConstraints = false
-        connectingView.play()
-        connectingView.isHidden = true
+        connectingToNetworkAnimationView.animation = LottieAnimation.named("connectingView")
+        connectingToNetworkAnimationView.loopMode = .loop
+        connectingToNetworkAnimationView.contentMode = .scaleAspectFit
+        connectingToNetworkAnimationView.translatesAutoresizingMaskIntoConstraints = false
+        connectingToNetworkAnimationView.play()
+        connectingToNetworkAnimationView.isHidden = true
         
-        animationView.addSubview(connectingView)
+        disconnectedNetworkAnimationView.addSubview(connectingToNetworkAnimationView)
     }
     
     private func setupConnectedView() {
-        connectedView.animation = LottieAnimation.named("5785-checkmark")
-        connectedView.loopMode = .repeatBackwards(1)
-        connectedView.contentMode = .scaleAspectFit
-        connectedView.translatesAutoresizingMaskIntoConstraints = false
+        succesfullyConnectedAnimationView.animation = LottieAnimation.named("connectedView")
+        succesfullyConnectedAnimationView.loopMode = .repeatBackwards(1)
+        succesfullyConnectedAnimationView.contentMode = .scaleAspectFit
+        succesfullyConnectedAnimationView.translatesAutoresizingMaskIntoConstraints = false
         
-        animationView.addSubview(connectedView)
+        disconnectedNetworkAnimationView.addSubview(succesfullyConnectedAnimationView)
     }
     
     private func setupCloseConnectionView() {
-        closeConnectionView.animation = LottieAnimation.named("97670-tomato-error")
-        closeConnectionView.contentMode = .scaleAspectFit
-        closeConnectionView.loopMode = .repeatBackwards(1)
-        closeConnectionView.translatesAutoresizingMaskIntoConstraints = false
+        succesfullyDisconnectedAnimationView.animation = LottieAnimation.named("closeConnectionView")
+        succesfullyDisconnectedAnimationView.contentMode = .scaleAspectFit
+        succesfullyDisconnectedAnimationView.loopMode = .repeatBackwards(1)
+        succesfullyDisconnectedAnimationView.translatesAutoresizingMaskIntoConstraints = false
         
-        animationView.addSubview(closeConnectionView)
+        disconnectedNetworkAnimationView.addSubview(succesfullyDisconnectedAnimationView)
+    }
+    
+    private func changeAnimation(with connect: Bool) {
+        if connect {
+            connectedNetworkAnimationView.fadeIn()
+        } else {
+            connectedNetworkAnimationView.fadeOut()
+        }
     }
     
     private func applyConstraints() {
         NSLayoutConstraint.activate([
-            animationView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: view.frame.height / 6),
-            animationView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
-            animationView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
-            animationView.heightAnchor.constraint(equalToConstant: view.frame.height / 3)
+            disconnectedNetworkAnimationView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: view.frame.height / 6),
+            disconnectedNetworkAnimationView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
+            disconnectedNetworkAnimationView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
+            disconnectedNetworkAnimationView.heightAnchor.constraint(equalToConstant: view.frame.height / 3)
         ])
         
         NSLayoutConstraint.activate([
-            animationConnectedView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: view.frame.height / 6),
-            animationConnectedView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
-            animationConnectedView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
-            animationConnectedView.heightAnchor.constraint(equalToConstant: view.frame.height / 3)
+            connectedNetworkAnimationView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: view.frame.height / 6),
+            connectedNetworkAnimationView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
+            connectedNetworkAnimationView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
+            connectedNetworkAnimationView.heightAnchor.constraint(equalToConstant: view.frame.height / 3)
         ])
         
         NSLayoutConstraint.activate([
-            connectingView.leadingAnchor.constraint(equalTo: animationView.leadingAnchor, constant: 60),
-            connectingView.trailingAnchor.constraint(equalTo: animationView.trailingAnchor, constant: -60),
-            connectingView.topAnchor.constraint(equalTo: animationView.topAnchor, constant: 60),
-            connectingView.bottomAnchor.constraint(equalTo: animationView.bottomAnchor, constant: -60)
+            connectingToNetworkAnimationView.leadingAnchor.constraint(equalTo: disconnectedNetworkAnimationView.leadingAnchor, constant: 60),
+            connectingToNetworkAnimationView.trailingAnchor.constraint(equalTo: disconnectedNetworkAnimationView.trailingAnchor, constant: -60),
+            connectingToNetworkAnimationView.topAnchor.constraint(equalTo: disconnectedNetworkAnimationView.topAnchor, constant: 60),
+            connectingToNetworkAnimationView.bottomAnchor.constraint(equalTo: disconnectedNetworkAnimationView.bottomAnchor, constant: -60)
         ])
         
         NSLayoutConstraint.activate([
-            connectedView.leadingAnchor.constraint(equalTo: animationView.leadingAnchor, constant: 15),
-            connectedView.trailingAnchor.constraint(equalTo: animationView.trailingAnchor, constant: -15),
-            connectedView.topAnchor.constraint(equalTo: animationView.topAnchor, constant: 15),
-            connectedView.bottomAnchor.constraint(equalTo: animationView.bottomAnchor, constant: -15)
+            succesfullyConnectedAnimationView.leadingAnchor.constraint(equalTo: disconnectedNetworkAnimationView.leadingAnchor, constant: 15),
+            succesfullyConnectedAnimationView.trailingAnchor.constraint(equalTo: disconnectedNetworkAnimationView.trailingAnchor, constant: -15),
+            succesfullyConnectedAnimationView.topAnchor.constraint(equalTo: disconnectedNetworkAnimationView.topAnchor, constant: 15),
+            succesfullyConnectedAnimationView.bottomAnchor.constraint(equalTo: disconnectedNetworkAnimationView.bottomAnchor, constant: -15)
         ])
         
         NSLayoutConstraint.activate([
-            closeConnectionView.leadingAnchor.constraint(equalTo: animationView.leadingAnchor, constant: 60),
-            closeConnectionView.trailingAnchor.constraint(equalTo: animationView.trailingAnchor, constant: -60),
-            closeConnectionView.topAnchor.constraint(equalTo: animationView.topAnchor, constant: 60),
-            closeConnectionView.bottomAnchor.constraint(equalTo: animationView.bottomAnchor, constant: -60)
+            succesfullyDisconnectedAnimationView.leadingAnchor.constraint(equalTo: disconnectedNetworkAnimationView.leadingAnchor, constant: 60),
+            succesfullyDisconnectedAnimationView.trailingAnchor.constraint(equalTo: disconnectedNetworkAnimationView.trailingAnchor, constant: -60),
+            succesfullyDisconnectedAnimationView.topAnchor.constraint(equalTo: disconnectedNetworkAnimationView.topAnchor, constant: 60),
+            succesfullyDisconnectedAnimationView.bottomAnchor.constraint(equalTo: disconnectedNetworkAnimationView.bottomAnchor, constant: -60)
         ])
         
         NSLayoutConstraint.activate([
@@ -295,8 +300,6 @@ extension MainViewController {
             locationArrow.widthAnchor.constraint(equalToConstant: 20)
         ])
         
-        
-        //Settings of buttons
         if UIDevice.current.userInterfaceIdiom == .phone {
             NSLayoutConstraint.activate([
                 connectButtonTapped.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
@@ -308,7 +311,7 @@ extension MainViewController {
             NSLayoutConstraint.activate([
                 locationChangeButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
                 locationChangeButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
-                locationChangeButton.topAnchor.constraint(equalTo: animationView.bottomAnchor, constant: 50),
+                locationChangeButton.topAnchor.constraint(equalTo: disconnectedNetworkAnimationView.bottomAnchor, constant: 50),
                 locationChangeButton.heightAnchor.constraint(equalToConstant: 50)
             ])
         } else if UIDevice.current.userInterfaceIdiom == .pad {
@@ -322,7 +325,7 @@ extension MainViewController {
             
             NSLayoutConstraint.activate([
                 locationChangeButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-                locationChangeButton.topAnchor.constraint(equalTo: animationView.bottomAnchor, constant: 50),
+                locationChangeButton.topAnchor.constraint(equalTo: disconnectedNetworkAnimationView.bottomAnchor, constant: 50),
                 locationChangeButton.heightAnchor.constraint(equalToConstant: 50),
                 locationChangeButton.widthAnchor.constraint(equalToConstant: width)
             ])
@@ -331,79 +334,9 @@ extension MainViewController {
     }
 }
 
-// MARK: Here is connecting to VPN
-
-extension MainViewController {
-
-    private func establishVPNConnection() {
-        let callback = { (error: Error?) -> Void in
-            self.manager?.loadFromPreferences(completionHandler: { (error) in
-                guard error == nil else {
-                    print("\(error!.localizedDescription)")
-                    return
-                }
-                
-//                let options: [String : NSObject] = [
-//                    "username": "" as NSString,
-//                    "password": "" as NSString
-//                ]
-                
-                do {
-                    try self.manager?.connection.startVPNTunnel()
-                } catch {
-                    print("\(error.localizedDescription)")
-                }
-            })
-        }
-        
-        configureVPN(configName: "leyns", callback: callback)
+extension MainViewController: ServerListViewControllerDelegate {
+    func updateChosenServer(server: Server) {
+        locationLabel.text = server.region
+        locationImage.image = UIImage(named: server.flag)
     }
-    
-    func stopConnection() {
-        manager?.connection.stopVPNTunnel()
-    }
-    
-    func configureVPN(configName: String, callback: @escaping (Error?) -> Void) {
-        let configurationFile = Bundle.main.url(forResource: configName, withExtension: "ovpn")
-        let configurationContent = try! Data(contentsOf: configurationFile!)
-
-        NETunnelProviderManager.loadAllFromPreferences { (managers, error) in
-            guard error == nil else {
-                print("\(error!.localizedDescription)")
-                callback(error)
-                return
-            }
-            
-            self.manager = managers?.first ?? NETunnelProviderManager()
-            self.manager?.loadFromPreferences(completionHandler: { (error) in
-                guard error == nil else {
-                    print("\(error!.localizedDescription)")
-                    callback(error)
-                    return
-                }
-                
-                let tunnelProtocol = NETunnelProviderProtocol()
-                tunnelProtocol.serverAddress = ""
-                tunnelProtocol.providerBundleIdentifier = "com.iliagusarov.TR-VPN.tunnel"
-                tunnelProtocol.providerConfiguration = ["configuration": configurationContent]
-                tunnelProtocol.disconnectOnSleep = false
-                
-                self.manager?.protocolConfiguration = tunnelProtocol
-                self.manager?.localizedDescription = "TR VPN"
-                
-                self.manager?.isEnabled = true
-                
-                self.manager?.saveToPreferences(completionHandler: { (error) in
-                    guard error == nil else {
-                        print("\(error!.localizedDescription)")
-                        callback(error)
-                        return
-                    }
-                    
-                    callback(nil)
-                })
-            })
-        }
-    }
-    
 }

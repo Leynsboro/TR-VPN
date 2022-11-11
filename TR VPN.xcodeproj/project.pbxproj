@@ -7,20 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4C16188B2906F60A0029EB09 /* 7227-vui-animation.json in Resources */ = {isa = PBXBuildFile; fileRef = 4C16188A2906F60A0029EB09 /* 7227-vui-animation.json */; };
+		4C0445EE291D8E58000A8819 /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0445ED291D8E58000A8819 /* Server.swift */; };
+		4C16188B2906F60A0029EB09 /* animationConnectedView.json in Resources */ = {isa = PBXBuildFile; fileRef = 4C16188A2906F60A0029EB09 /* animationConnectedView.json */; };
 		4C16188F2906FC9F0029EB09 /* Extension+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C16188E2906FC9F0029EB09 /* Extension+UIView.swift */; };
 		4C1618912907FF210029EB09 /* ServerListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1618902907FF210029EB09 /* ServerListViewController.swift */; };
 		4C3540202902A78600570BD9 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 4C35401F2902A78600570BD9 /* Lottie */; };
-		4C3540282902B3FE00570BD9 /* 95680-purple-circle.json in Resources */ = {isa = PBXBuildFile; fileRef = 4C3540272902B3FE00570BD9 /* 95680-purple-circle.json */; };
-		4C35402A2902B8FE00570BD9 /* 5785-checkmark.json in Resources */ = {isa = PBXBuildFile; fileRef = 4C3540292902B8FE00570BD9 /* 5785-checkmark.json */; };
-		4C35402C2902BCB900570BD9 /* 122729-vibecity-loader.json in Resources */ = {isa = PBXBuildFile; fileRef = 4C35402B2902BCB900570BD9 /* 122729-vibecity-loader.json */; };
-		4C35402E2902C6D600570BD9 /* 97670-tomato-error.json in Resources */ = {isa = PBXBuildFile; fileRef = 4C35402D2902C6D600570BD9 /* 97670-tomato-error.json */; };
+		4C3540282902B3FE00570BD9 /* disconnectedView.json in Resources */ = {isa = PBXBuildFile; fileRef = 4C3540272902B3FE00570BD9 /* disconnectedView.json */; };
+		4C35402A2902B8FE00570BD9 /* connectedView.json in Resources */ = {isa = PBXBuildFile; fileRef = 4C3540292902B8FE00570BD9 /* connectedView.json */; };
+		4C35402C2902BCB900570BD9 /* connectingView.json in Resources */ = {isa = PBXBuildFile; fileRef = 4C35402B2902BCB900570BD9 /* connectingView.json */; };
+		4C35402E2902C6D600570BD9 /* closeConnectionView.json in Resources */ = {isa = PBXBuildFile; fileRef = 4C35402D2902C6D600570BD9 /* closeConnectionView.json */; };
 		4C3DD80D290BE7E000346171 /* Extension+UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3DD80C290BE7E000346171 /* Extension+UIApplication.swift */; };
-		4C3DD810290C0C4000346171 /* YandexMobileAdsPackage in Frameworks */ = {isa = PBXBuildFile; productRef = 4C3DD80F290C0C4000346171 /* YandexMobileAdsPackage */; };
-		4C3DD812290C0E3900346171 /* YandexMobileAdsBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4C3DD811290C0E3900346171 /* YandexMobileAdsBundle.bundle */; };
 		4C72C7F529098A0A0091F296 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C72C7F429098A0A0091F296 /* SettingsViewController.swift */; };
-		4C72C7FF290AD6B00091F296 /* leyns.ovpn in Resources */ = {isa = PBXBuildFile; fileRef = 4C72C7FE290AD6B00091F296 /* leyns.ovpn */; };
-		4C72C804290AFF2D0091F296 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C72C803290AFF2D0091F296 /* SettingsTableViewCell.swift */; };
+		4C72C804290AFF2D0091F296 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C72C803290AFF2D0091F296 /* CustomTableViewCell.swift */; };
+		4CB00803291BC11D00091085 /* VpnManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB00802291BC11D00091085 /* VpnManager.swift */; };
 		4CE1CEE428FEB1F900E6C30E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE1CEE328FEB1F900E6C30E /* AppDelegate.swift */; };
 		4CE1CEE628FEB1F900E6C30E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE1CEE528FEB1F900E6C30E /* SceneDelegate.swift */; };
 		4CE1CEE828FEB1F900E6C30E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE1CEE728FEB1F900E6C30E /* MainViewController.swift */; };
@@ -62,18 +61,18 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		4C16188A2906F60A0029EB09 /* 7227-vui-animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "7227-vui-animation.json"; sourceTree = "<group>"; };
+		4C0445ED291D8E58000A8819 /* Server.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Server.swift; sourceTree = "<group>"; };
+		4C16188A2906F60A0029EB09 /* animationConnectedView.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = animationConnectedView.json; sourceTree = "<group>"; };
 		4C16188E2906FC9F0029EB09 /* Extension+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIView.swift"; sourceTree = "<group>"; };
 		4C1618902907FF210029EB09 /* ServerListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerListViewController.swift; sourceTree = "<group>"; };
-		4C3540272902B3FE00570BD9 /* 95680-purple-circle.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "95680-purple-circle.json"; sourceTree = "<group>"; };
-		4C3540292902B8FE00570BD9 /* 5785-checkmark.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "5785-checkmark.json"; sourceTree = "<group>"; };
-		4C35402B2902BCB900570BD9 /* 122729-vibecity-loader.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "122729-vibecity-loader.json"; sourceTree = "<group>"; };
-		4C35402D2902C6D600570BD9 /* 97670-tomato-error.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "97670-tomato-error.json"; sourceTree = "<group>"; };
+		4C3540272902B3FE00570BD9 /* disconnectedView.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = disconnectedView.json; sourceTree = "<group>"; };
+		4C3540292902B8FE00570BD9 /* connectedView.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = connectedView.json; sourceTree = "<group>"; };
+		4C35402B2902BCB900570BD9 /* connectingView.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = connectingView.json; sourceTree = "<group>"; };
+		4C35402D2902C6D600570BD9 /* closeConnectionView.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = closeConnectionView.json; sourceTree = "<group>"; };
 		4C3DD80C290BE7E000346171 /* Extension+UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIApplication.swift"; sourceTree = "<group>"; };
-		4C3DD811290C0E3900346171 /* YandexMobileAdsBundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = YandexMobileAdsBundle.bundle; sourceTree = "<group>"; };
 		4C72C7F429098A0A0091F296 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
-		4C72C7FE290AD6B00091F296 /* leyns.ovpn */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = leyns.ovpn; sourceTree = "<group>"; };
-		4C72C803290AFF2D0091F296 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
+		4C72C803290AFF2D0091F296 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		4CB00802291BC11D00091085 /* VpnManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VpnManager.swift; sourceTree = "<group>"; };
 		4CE1CEE028FEB1F900E6C30E /* TR VPN.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TR VPN.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CE1CEE328FEB1F900E6C30E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4CE1CEE528FEB1F900E6C30E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -100,7 +99,6 @@
 				4CE1CF1428FEB6E900E6C30E /* SystemConfiguration.framework in Frameworks */,
 				4CE1CEF928FEB2ED00E6C30E /* OpenVPNAdapter in Frameworks */,
 				4C3540202902A78600570BD9 /* Lottie in Frameworks */,
-				4C3DD810290C0C4000346171 /* YandexMobileAdsPackage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -118,14 +116,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4C0445EC291D8E45000A8819 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4C0445ED291D8E58000A8819 /* Server.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		4C35402F2902C6DC00570BD9 /* Animations */ = {
 			isa = PBXGroup;
 			children = (
-				4C35402D2902C6D600570BD9 /* 97670-tomato-error.json */,
-				4C35402B2902BCB900570BD9 /* 122729-vibecity-loader.json */,
-				4C3540292902B8FE00570BD9 /* 5785-checkmark.json */,
-				4C3540272902B3FE00570BD9 /* 95680-purple-circle.json */,
-				4C16188A2906F60A0029EB09 /* 7227-vui-animation.json */,
+				4C35402D2902C6D600570BD9 /* closeConnectionView.json */,
+				4C35402B2902BCB900570BD9 /* connectingView.json */,
+				4C3540292902B8FE00570BD9 /* connectedView.json */,
+				4C3540272902B3FE00570BD9 /* disconnectedView.json */,
+				4C16188A2906F60A0029EB09 /* animationConnectedView.json */,
 			);
 			path = Animations;
 			sourceTree = "<group>";
@@ -143,7 +149,6 @@
 		4C72C7F7290AD52B0091F296 /* Configurations */ = {
 			isa = PBXGroup;
 			children = (
-				4C72C7FE290AD6B00091F296 /* leyns.ovpn */,
 			);
 			path = Configurations;
 			sourceTree = "<group>";
@@ -179,15 +184,22 @@
 		4C72C802290AFF090091F296 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				4C72C803290AFF2D0091F296 /* SettingsTableViewCell.swift */,
+				4C72C803290AFF2D0091F296 /* CustomTableViewCell.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		4CB00801291BC10700091085 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				4CB00802291BC11D00091085 /* VpnManager.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		4CE1CED728FEB1F900E6C30E = {
 			isa = PBXGroup;
 			children = (
-				4C3DD811290C0E3900346171 /* YandexMobileAdsBundle.bundle */,
 				4CE1CEE228FEB1F900E6C30E /* TR VPN */,
 				4CE1CF0328FEB36900E6C30E /* tunnel */,
 				4CE1CF0028FEB36900E6C30E /* Frameworks */,
@@ -207,6 +219,8 @@
 		4CE1CEE228FEB1F900E6C30E /* TR VPN */ = {
 			isa = PBXGroup;
 			children = (
+				4C0445EC291D8E45000A8819 /* Models */,
+				4CB00801291BC10700091085 /* Services */,
 				4C72C7FB290AD58D0091F296 /* Extentions */,
 				4C72C802290AFF090091F296 /* Views */,
 				4C72C7F6290AD50A0091F296 /* ViewControllers */,
@@ -261,7 +275,6 @@
 			packageProductDependencies = (
 				4CE1CEF828FEB2ED00E6C30E /* OpenVPNAdapter */,
 				4C35401F2902A78600570BD9 /* Lottie */,
-				4C3DD80F290C0C4000346171 /* YandexMobileAdsPackage */,
 			);
 			productName = "TR VPN";
 			productReference = 4CE1CEE028FEB1F900E6C30E /* TR VPN.app */;
@@ -317,7 +330,6 @@
 			packageReferences = (
 				4CE1CEF728FEB2ED00E6C30E /* XCRemoteSwiftPackageReference "OpenVPNAdapter" */,
 				4C35401E2902A78500570BD9 /* XCRemoteSwiftPackageReference "lottie-ios" */,
-				4C3DD80E290C0C4000346171 /* XCRemoteSwiftPackageReference "yandex-ads-sdk-swift" */,
 			);
 			productRefGroup = 4CE1CEE128FEB1F900E6C30E /* Products */;
 			projectDirPath = "";
@@ -334,15 +346,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4C3DD812290C0E3900346171 /* YandexMobileAdsBundle.bundle in Resources */,
-				4C35402C2902BCB900570BD9 /* 122729-vibecity-loader.json in Resources */,
-				4C16188B2906F60A0029EB09 /* 7227-vui-animation.json in Resources */,
+				4C35402C2902BCB900570BD9 /* connectingView.json in Resources */,
+				4C16188B2906F60A0029EB09 /* animationConnectedView.json in Resources */,
 				4CE1CEF028FEB1FA00E6C30E /* LaunchScreen.storyboard in Resources */,
-				4C35402A2902B8FE00570BD9 /* 5785-checkmark.json in Resources */,
+				4C35402A2902B8FE00570BD9 /* connectedView.json in Resources */,
 				4CE1CEED28FEB1FA00E6C30E /* Assets.xcassets in Resources */,
-				4C35402E2902C6D600570BD9 /* 97670-tomato-error.json in Resources */,
-				4C3540282902B3FE00570BD9 /* 95680-purple-circle.json in Resources */,
-				4C72C7FF290AD6B00091F296 /* leyns.ovpn in Resources */,
+				4C35402E2902C6D600570BD9 /* closeConnectionView.json in Resources */,
+				4C3540282902B3FE00570BD9 /* disconnectedView.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -360,9 +370,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C0445EE291D8E58000A8819 /* Server.swift in Sources */,
 				4CE1CEE828FEB1F900E6C30E /* MainViewController.swift in Sources */,
-				4C72C804290AFF2D0091F296 /* SettingsTableViewCell.swift in Sources */,
+				4C72C804290AFF2D0091F296 /* CustomTableViewCell.swift in Sources */,
 				4CE1CEE428FEB1F900E6C30E /* AppDelegate.swift in Sources */,
+				4CB00803291BC11D00091085 /* VpnManager.swift in Sources */,
 				4C1618912907FF210029EB09 /* ServerListViewController.swift in Sources */,
 				4C16188F2906FC9F0029EB09 /* Extension+UIView.swift in Sources */,
 				4CE1CEE628FEB1F900E6C30E /* SceneDelegate.swift in Sources */,
@@ -406,8 +418,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				APP_BUILD = 2;
-				APP_VERSION = 0.4.2;
+				APP_BUILD = 3;
+				APP_VERSION = 0.4.3;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -469,8 +481,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				APP_BUILD = 2;
-				APP_VERSION = 0.4.2;
+				APP_BUILD = 3;
+				APP_VERSION = 0.4.3;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -530,7 +542,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "TR VPN/App/TR VPN.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 87898T57Q4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "TR VPN/App/Info.plist";
@@ -544,7 +556,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.4.2;
+				MARKETING_VERSION = 0.4.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.iliagusarov.TR-VPN";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -564,7 +576,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "TR VPN/App/TR VPN.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 87898T57Q4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "TR VPN/App/Info.plist";
@@ -578,7 +590,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.4.2;
+				MARKETING_VERSION = 0.4.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.iliagusarov.TR-VPN";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -595,7 +607,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = tunnel/tunnel.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 87898T57Q4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = tunnel/Info.plist;
@@ -606,7 +618,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 0.4.2;
+				MARKETING_VERSION = 0.4.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.iliagusarov.TR-VPN.tunnel";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -621,7 +633,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = tunnel/tunnel.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 87898T57Q4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = tunnel/Info.plist;
@@ -632,7 +644,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 0.4.2;
+				MARKETING_VERSION = 0.4.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.iliagusarov.TR-VPN.tunnel";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -683,14 +695,6 @@
 				minimumVersion = 3.0.0;
 			};
 		};
-		4C3DD80E290C0C4000346171 /* XCRemoteSwiftPackageReference "yandex-ads-sdk-swift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/yandexmobile/yandex-ads-sdk-swift";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.0.0;
-			};
-		};
 		4CE1CEF728FEB2ED00E6C30E /* XCRemoteSwiftPackageReference "OpenVPNAdapter" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ss-abramchuk/OpenVPNAdapter";
@@ -706,11 +710,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 4C35401E2902A78500570BD9 /* XCRemoteSwiftPackageReference "lottie-ios" */;
 			productName = Lottie;
-		};
-		4C3DD80F290C0C4000346171 /* YandexMobileAdsPackage */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 4C3DD80E290C0C4000346171 /* XCRemoteSwiftPackageReference "yandex-ads-sdk-swift" */;
-			productName = YandexMobileAdsPackage;
 		};
 		4CE1CEF828FEB2ED00E6C30E /* OpenVPNAdapter */ = {
 			isa = XCSwiftPackageProductDependency;

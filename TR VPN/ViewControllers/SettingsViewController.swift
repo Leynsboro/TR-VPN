@@ -2,23 +2,20 @@
 //  SettingsViewController.swift
 //  TR VPN
 //
-//  Created by Илья Гусаров on 26.10.2022.
+//  Created by Ilia Gusarov on 26.10.2022.
 //
 
 import UIKit
-import YandexMobileAds
 
-class SettingsViewController: UIViewController, YMAInterstitialAdDelegate {
-    
-    var interstitialAd: YMAInterstitialAd!
-    
+class SettingsViewController: UIViewController {
+        
     private let versionImage: UIImageView = {
         let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
         image.contentMode = .scaleAspectFit
         image.clipsToBounds = true
         image.layer.cornerRadius = 20
-        image.image = UIImage(named: "AppIcon")
+        image.image = UIImage(named: "logo")
         return image
     }()
     
@@ -34,14 +31,14 @@ class SettingsViewController: UIViewController, YMAInterstitialAdDelegate {
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.layer.cornerRadius = 15
-        tableView.register(SettingsTableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView.register(CustomTableViewCell.self, forCellReuseIdentifier: "cell")
         tableView.separatorStyle = .none
         tableView.isScrollEnabled = false
         tableView.tintColor = .white
         return tableView
     }()
     
-    private let menuButton = ["Write a review", "Watch ads", "Privacy Policy", "Terms & Conditions", "Follow instagram"]
+    private let buttonsNames = ["Write a review", "Watch ads", "Privacy Policy", "Terms & Conditions", "Follow instagram", "Hello"]
     
     private let tableRowHeight = 60
     
@@ -63,21 +60,19 @@ class SettingsViewController: UIViewController, YMAInterstitialAdDelegate {
     }
     
     private func applyConstraints() {
-        let imageWidth = (view.frame.width / 3.5)
-        let tableHeight = tableRowHeight * menuButton.count
+        let tableHeight = tableRowHeight * buttonsNames.count
         
         NSLayoutConstraint.activate([
             versionImage.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 50),
             versionImage.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            versionImage.widthAnchor.constraint(equalToConstant: imageWidth),
-            versionImage.heightAnchor.constraint(equalToConstant: imageWidth)
+            versionImage.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1/4),
+            versionImage.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1/4)
         ])
         
         NSLayoutConstraint.activate([
             versionLabel.topAnchor.constraint(equalTo: versionImage.bottomAnchor, constant: 15),
             versionLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
-
         
         NSLayoutConstraint.activate([
             supportTableView.topAnchor.constraint(equalTo: versionLabel.bottomAnchor, constant: 50),
@@ -91,19 +86,17 @@ class SettingsViewController: UIViewController, YMAInterstitialAdDelegate {
 
 extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        menuButton.count
+        buttonsNames.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? SettingsTableViewCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? CustomTableViewCell else {
             return UITableViewCell()
         }
         
-        let text = menuButton[indexPath.row]
+        let text = buttonsNames[indexPath.row]
         
-        cell.configure(mainText: text)
-
-        cell.backgroundColor = UIColor(red: 15/255, green: 76/255, blue: 120/255, alpha: 1)
+        cell.configureSettings(mainText: text)
         
         return cell
     }
@@ -115,38 +108,6 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-        switch indexPath.row {
-        case 0:
-            print("review")
-        case 1:
-            showAd()
-        case 2:
-            openSite(with: "https://tr-vpn.com/privacy.html")
-        case 3:
-            openSite(with: "https://tr-vpn.com/terms.html")
-        case 4:
-            openSite(with: "https://instagram.com/ilia.leynsboro")
-        default:
-            break
-        }
-        
+        //Here is the implementation of the buttons
     }
-}
-
-extension SettingsViewController {
-    func interstitialAdDidLoad(_ interstitialAd: YMAInterstitialAd) {
-        interstitialAd.present(from: self)
-        print("Ad loaded")
-    }
-    
-    private func showAd() {
-        interstitialAd = YMAInterstitialAd(adUnitID: "R-M-1998463-1")
-        interstitialAd.delegate = self
-        interstitialAd.load()
-    }
-    
-    private func openSite(with url: String) {
-        guard let webURL = URL(string:  url) else { return }
-        UIApplication.shared.open(webURL, options: [:], completionHandler: nil)
-    }   
 }

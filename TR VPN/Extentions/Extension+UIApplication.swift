@@ -2,7 +2,7 @@
 //  Extension+UIApplication.swift
 //  TR VPN
 //
-//  Created by Илья Гусаров on 28.10.2022.
+//  Created by Ilia Gusarov on 28.10.2022.
 //
 
 import UIKit
