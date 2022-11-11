@@ -10,7 +10,7 @@
 ## I ordered VPS with ISPManager for the simplest setup openVPNServer and something more... ;)
 
 <p>
-<img src="https://tr-vpn.com/images/firstImage.jpg">
-<img src="https://tr-vpn.com/images/secondImage.jpg">
-<img src="https://tr-vpn.com/images/thirdImage.jpg">
+<img style="width: 30vw;" src="https://tr-vpn.com/images/firstImage.jpg">
+<img style="width: 30vw;" src="https://tr-vpn.com/images/secondImage.jpg">
+<img style="width: 30vw;" src="https://tr-vpn.com/images/thirdImage.jpg">
 </p>
