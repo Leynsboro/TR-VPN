@@ -7,7 +7,7 @@
 <p>Here is guide to create  <a href="https://betterprogramming.pub/how-to-build-an-openvpn-client-on-ios-c8f927c11e80">openVPNClient</a></p>
 <p>Here is the vps that i ordered <a href="https://www.reg.ru/?rlink=reflink-10759625">reg.ru</a></p>
 
-<p>I ordered VPS with ISPManager for the simplest setup openVPNServer and something more... ;)</p>
+<p>I ordered VPN with ISPManager for the simplest setup openVPNServer and something more... ;)</p>
 
 ## 🦾 Capabilities
   - **Connect to VPS server**
