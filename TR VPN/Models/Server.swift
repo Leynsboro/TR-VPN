@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Server {
+struct Server: Codable {
     let region: String!
     let configFile: String!
     let flag: String!
