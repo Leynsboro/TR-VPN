@@ -13,6 +13,8 @@ protocol ServerListViewControllerDelegate {
 }
 
 class MainViewController: UIViewController {
+    
+    private var server: Server!
             
     private let disconnectedNetworkAnimationView = LottieAnimationView()
     private let connectedNetworkAnimationView = LottieAnimationView()
@@ -31,14 +33,13 @@ class MainViewController: UIViewController {
     
     private let locationLabel: UILabel = {
         let label = UILabel()
-        label.text = "Russia, Moscow"
         label.textColor = .white
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
     private let locationImage: UIImageView = {
-        let image = UIImageView(image: UIImage(named: "russiaFlag"))
+        let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
         image.contentMode = .scaleAspectFit
         return image
@@ -63,6 +64,8 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor(red: 0/255, green: 42/255, blue: 72/255, alpha: 1)
+        
+        server = StorageManager.shared.fetchServer()
         
         configureNavbar()
         setupUI()
@@ -90,7 +93,7 @@ extension MainViewController {
         connectButtonTapped.animationButtonPressed()
         
         if VpnManager.shared.connectionStatus == .none || VpnManager.shared.connectionStatus == .disconnected {
-            VpnManager.shared.establishVPNConnection(configName: "yourConfig")
+            VpnManager.shared.establishVPNConnection(configName: server.configFile)
             
             print("Connecting")
             
@@ -174,6 +177,10 @@ extension MainViewController {
         setupCloseConnectionView()
                 
         view.addSubview(locationChangeButton)
+        
+        locationLabel.text = server.region
+        locationImage.image = UIImage(named: server.flag)
+        
         locationChangeButton.addSubview(locationImage)
         locationChangeButton.addSubview(locationLabel)
         locationChangeButton.addSubview(locationArrow)
@@ -338,5 +345,6 @@ extension MainViewController: ServerListViewControllerDelegate {
     func updateChosenServer(server: Server) {
         locationLabel.text = server.region
         locationImage.image = UIImage(named: server.flag)
+        StorageManager.shared.save(server: server)
     }
 }
