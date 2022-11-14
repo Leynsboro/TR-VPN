@@ -14,10 +14,9 @@
   - **Choose Server (just need to rewrite server property)**
 
 <p>
-<img style="width: 12vw;" src="https://tr-vpn.com/images/firstImage.jpg">
-<img style="width: 12vw;" src="https://tr-vpn.com/images/secondImage.jpg">
-<img style="width: 12vw;" src="https://tr-vpn.com/images/thirdImage.jpg">
-<img src="https://tr-vpn.com/images/app.gif" width="100" height="100" />
+<img style="width: 15vw;" src="https://tr-vpn.com/images/firstImage.jpg">
+<img style="width: 15vw;" src="https://tr-vpn.com/images/secondImage.jpg">
+<img style="width: 15vw;" src="https://tr-vpn.com/images/thirdImage.jpg">
 </p>
 
 ## 🖥 Technology
@@ -36,3 +35,5 @@
  must be submitted from an Apple Developer 
  Program account registered to 
  a company or organization.**
+ 
+ ![](https://tr-vpn.com/images/app.gif)
