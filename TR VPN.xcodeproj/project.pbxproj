@@ -19,6 +19,7 @@
 		4C3DD80D290BE7E000346171 /* Extension+UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3DD80C290BE7E000346171 /* Extension+UIApplication.swift */; };
 		4C72C7F529098A0A0091F296 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C72C7F429098A0A0091F296 /* SettingsViewController.swift */; };
 		4C72C804290AFF2D0091F296 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C72C803290AFF2D0091F296 /* CustomTableViewCell.swift */; };
+		4CA4496A2922A19900E4D8D8 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA449692922A19900E4D8D8 /* StorageManager.swift */; };
 		4CB00803291BC11D00091085 /* VpnManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB00802291BC11D00091085 /* VpnManager.swift */; };
 		4CE1CEE428FEB1F900E6C30E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE1CEE328FEB1F900E6C30E /* AppDelegate.swift */; };
 		4CE1CEE628FEB1F900E6C30E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE1CEE528FEB1F900E6C30E /* SceneDelegate.swift */; };
@@ -72,6 +73,7 @@
 		4C3DD80C290BE7E000346171 /* Extension+UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIApplication.swift"; sourceTree = "<group>"; };
 		4C72C7F429098A0A0091F296 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		4C72C803290AFF2D0091F296 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		4CA449692922A19900E4D8D8 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		4CB00802291BC11D00091085 /* VpnManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VpnManager.swift; sourceTree = "<group>"; };
 		4CE1CEE028FEB1F900E6C30E /* TR VPN.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TR VPN.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CE1CEE328FEB1F900E6C30E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 			isa = PBXGroup;
 			children = (
 				4CB00802291BC11D00091085 /* VpnManager.swift */,
+				4CA449692922A19900E4D8D8 /* StorageManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -372,6 +375,7 @@
 			files = (
 				4C0445EE291D8E58000A8819 /* Server.swift in Sources */,
 				4CE1CEE828FEB1F900E6C30E /* MainViewController.swift in Sources */,
+				4CA4496A2922A19900E4D8D8 /* StorageManager.swift in Sources */,
 				4C72C804290AFF2D0091F296 /* CustomTableViewCell.swift in Sources */,
 				4CE1CEE428FEB1F900E6C30E /* AppDelegate.swift in Sources */,
 				4CB00803291BC11D00091085 /* VpnManager.swift in Sources */,
