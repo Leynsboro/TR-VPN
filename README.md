@@ -24,6 +24,7 @@
   - **MVC**
   - **Singleton**
   - **Delegates**
+  - **UserDefaults**
  
 ## 🫀 Libraries
   - **Lottie [(https://github.com/airbnb/lottie-ios)](https://github.com/airbnb/lottie-ios)**
