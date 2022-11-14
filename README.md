@@ -17,7 +17,7 @@
 <img style="width: 12vw;" src="https://tr-vpn.com/images/firstImage.jpg">
 <img style="width: 12vw;" src="https://tr-vpn.com/images/secondImage.jpg">
 <img style="width: 12vw;" src="https://tr-vpn.com/images/thirdImage.jpg">
-<img style="width: 12vw;" src="https://tr-vpn.com/images/app.gif">
+<img src="https://tr-vpn.com/images/app.gif" width="100" height="100" />
 </p>
 
 ## 🖥 Technology
