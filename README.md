@@ -11,7 +11,7 @@
 
 ## 🦾 Capabilities
   - **Connect to VPN server**
-  - **Choose Server (just need to rewrite server property)**
+  - **Choose Server**
 
 <p>
 <img style="width: 15vw;" src="https://tr-vpn.com/images/firstImage.jpg">
