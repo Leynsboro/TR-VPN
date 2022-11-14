@@ -14,9 +14,10 @@
   - **Choose Server (just need to rewrite server property)**
 
 <p>
-<img style="width: 15vw;" src="https://tr-vpn.com/images/firstImage.jpg">
-<img style="width: 15vw;" src="https://tr-vpn.com/images/secondImage.jpg">
-<img style="width: 15vw;" src="https://tr-vpn.com/images/thirdImage.jpg">
+<img style="width: 12vw;" src="https://tr-vpn.com/images/firstImage.jpg">
+<img style="width: 12vw;" src="https://tr-vpn.com/images/secondImage.jpg">
+<img style="width: 12vw;" src="https://tr-vpn.com/images/thirdImage.jpg">
+<img style="width: 12vw;" src="https://tr-vpn.com/images/app.gif">
 </p>
 
 ## 🖥 Technology
