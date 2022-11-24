@@ -25,7 +25,7 @@ class MainViewController: UIViewController {
     private let connectButtonTapped: UIButton = {
         let button = UIButton()
         button.setTitle("Connect", for: .normal)
-        button.backgroundColor = UIColor(red: 0/255, green: 106/255, blue: 183/255, alpha: 1)
+        button.backgroundColor = UIColor.secondButtonColor
         button.layer.cornerRadius = 15
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
@@ -55,7 +55,7 @@ class MainViewController: UIViewController {
     
     private let locationChangeButton: UIButton = {
         let button = UIButton()
-        button.backgroundColor = UIColor(red: 73/255, green: 137/255, blue: 183/255, alpha: 1)
+        button.backgroundColor = UIColor.firstButtonColor
         button.translatesAutoresizingMaskIntoConstraints = false
         button.layer.cornerRadius = 15
         return button
@@ -63,7 +63,7 @@ class MainViewController: UIViewController {
         
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor(red: 0/255, green: 42/255, blue: 72/255, alpha: 1)
+        view.backgroundColor = UIColor.mainBackgroundColor
         
         server = StorageManager.shared.fetchServer()
         

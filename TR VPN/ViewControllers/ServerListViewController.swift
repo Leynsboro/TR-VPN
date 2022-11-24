@@ -27,7 +27,7 @@ class ServerListViewController: UIViewController, UINavigationControllerDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = UIColor(red: 0/255, green: 40/255, blue: 68/255, alpha: 1)
+        view.backgroundColor = UIColor.mainBackgroundColor
         
         serverListTableView.dataSource = self
         serverListTableView.delegate = self

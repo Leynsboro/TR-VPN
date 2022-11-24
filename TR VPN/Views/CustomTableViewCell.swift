@@ -42,7 +42,7 @@ class CustomTableViewCell: UITableViewCell {
         addSubview(mainLabel)
         addSubview(actionImage)
   
-        backgroundColor = UIColor(red: 15/255, green: 76/255, blue: 120/255, alpha: 1)
+        backgroundColor = UIColor.tableViewColor
         
         applyConstraints()
     }
