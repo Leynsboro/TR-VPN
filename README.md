@@ -14,10 +14,10 @@
   - **Choose Server**
 
 <p>
-<img style="width: 15vw;" src="https://raw.githubusercontent.com/Leynsboro/TR-VPN/main/Screenshots/firstImage.jpg">
-<img style="width: 15vw;" src="https://raw.githubusercontent.com/Leynsboro/TR-VPN/main/Screenshots/secondImage.jpg">
-<img style="width: 15vw;" src="https://raw.githubusercontent.com/Leynsboro/TR-VPN/main/Screenshots/thirdImage.jpg">
-<img style="width: 15vw;" src="https://github.com/Leynsboro/TR-VPN/blob/main/Screenshots/app.gif">
+<img style="width: 200px;" src="https://raw.githubusercontent.com/Leynsboro/TR-VPN/main/Screenshots/firstImage.jpg">
+<img style="width: 200px;" src="https://raw.githubusercontent.com/Leynsboro/TR-VPN/main/Screenshots/secondImage.jpg">
+<img style="width: 200px;" src="https://raw.githubusercontent.com/Leynsboro/TR-VPN/main/Screenshots/thirdImage.jpg">
+<img style="width: 200px;" src="https://github.com/Leynsboro/TR-VPN/blob/main/Screenshots/app.gif">
 </p>
 
 ## 🖥 Technology
