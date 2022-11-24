@@ -14,9 +14,9 @@
   - **Choose Server**
 
 <p>
-<img style="width: 15vw;" src="https://tr-vpn.com/images/firstImage.jpg">
-<img style="width: 15vw;" src="https://tr-vpn.com/images/secondImage.jpg">
-<img style="width: 15vw;" src="https://tr-vpn.com/images/thirdImage.jpg">
+<img style="width: 15vw;" src="https://raw.githubusercontent.com/Leynsboro/TR-VPN/main/Screenshots/firstImage.jpg">
+<img style="width: 15vw;" src="https://raw.githubusercontent.com/Leynsboro/TR-VPN/main/Screenshots/secondImage.jpg">
+<img style="width: 15vw;" src="https://raw.githubusercontent.com/Leynsboro/TR-VPN/main/Screenshots/thirdImage.jpg">
 <img style="width: 15vw;" src="https://github.com/Leynsboro/TR-VPN/blob/main/Screenshots/app.gif">
 </p>
 
