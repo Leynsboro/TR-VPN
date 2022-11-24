@@ -17,8 +17,13 @@
 		4C35402C2902BCB900570BD9 /* connectingView.json in Resources */ = {isa = PBXBuildFile; fileRef = 4C35402B2902BCB900570BD9 /* connectingView.json */; };
 		4C35402E2902C6D600570BD9 /* closeConnectionView.json in Resources */ = {isa = PBXBuildFile; fileRef = 4C35402D2902C6D600570BD9 /* closeConnectionView.json */; };
 		4C3DD80D290BE7E000346171 /* Extension+UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3DD80C290BE7E000346171 /* Extension+UIApplication.swift */; };
+		4C519FAC292FCD4400D45C1F /* app.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4C519FAB292FCD4400D45C1F /* app.gif */; };
+		4C519FB0292FCD6800D45C1F /* thirdImage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4C519FAD292FCD6700D45C1F /* thirdImage.jpg */; };
+		4C519FB1292FCD6800D45C1F /* firstImage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4C519FAE292FCD6800D45C1F /* firstImage.jpg */; };
+		4C519FB2292FCD6800D45C1F /* secondImage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4C519FAF292FCD6800D45C1F /* secondImage.jpg */; };
 		4C72C7F529098A0A0091F296 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C72C7F429098A0A0091F296 /* SettingsViewController.swift */; };
 		4C72C804290AFF2D0091F296 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C72C803290AFF2D0091F296 /* CustomTableViewCell.swift */; };
+		4C842614292ED2B90034F52A /* Extention+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C842613292ED2B90034F52A /* Extention+UIColor.swift */; };
 		4CA4496A2922A19900E4D8D8 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA449692922A19900E4D8D8 /* StorageManager.swift */; };
 		4CB00803291BC11D00091085 /* VpnManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB00802291BC11D00091085 /* VpnManager.swift */; };
 		4CE1CEE428FEB1F900E6C30E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE1CEE328FEB1F900E6C30E /* AppDelegate.swift */; };
@@ -71,8 +76,13 @@
 		4C35402B2902BCB900570BD9 /* connectingView.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = connectingView.json; sourceTree = "<group>"; };
 		4C35402D2902C6D600570BD9 /* closeConnectionView.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = closeConnectionView.json; sourceTree = "<group>"; };
 		4C3DD80C290BE7E000346171 /* Extension+UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIApplication.swift"; sourceTree = "<group>"; };
+		4C519FAB292FCD4400D45C1F /* app.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = app.gif; sourceTree = "<group>"; };
+		4C519FAD292FCD6700D45C1F /* thirdImage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = thirdImage.jpg; sourceTree = "<group>"; };
+		4C519FAE292FCD6800D45C1F /* firstImage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = firstImage.jpg; sourceTree = "<group>"; };
+		4C519FAF292FCD6800D45C1F /* secondImage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = secondImage.jpg; sourceTree = "<group>"; };
 		4C72C7F429098A0A0091F296 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		4C72C803290AFF2D0091F296 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		4C842613292ED2B90034F52A /* Extention+UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extention+UIColor.swift"; sourceTree = "<group>"; };
 		4CA449692922A19900E4D8D8 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		4CB00802291BC11D00091085 /* VpnManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VpnManager.swift; sourceTree = "<group>"; };
 		4CE1CEE028FEB1F900E6C30E /* TR VPN.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TR VPN.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -138,6 +148,17 @@
 			path = Animations;
 			sourceTree = "<group>";
 		};
+		4C519FAA292FCD2E00D45C1F /* Screenshots */ = {
+			isa = PBXGroup;
+			children = (
+				4C519FAE292FCD6800D45C1F /* firstImage.jpg */,
+				4C519FAF292FCD6800D45C1F /* secondImage.jpg */,
+				4C519FAD292FCD6700D45C1F /* thirdImage.jpg */,
+				4C519FAB292FCD4400D45C1F /* app.gif */,
+			);
+			path = Screenshots;
+			sourceTree = "<group>";
+		};
 		4C72C7F6290AD50A0091F296 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -160,6 +181,7 @@
 			children = (
 				4C16188E2906FC9F0029EB09 /* Extension+UIView.swift */,
 				4C3DD80C290BE7E000346171 /* Extension+UIApplication.swift */,
+				4C842613292ED2B90034F52A /* Extention+UIColor.swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
@@ -203,6 +225,7 @@
 		4CE1CED728FEB1F900E6C30E = {
 			isa = PBXGroup;
 			children = (
+				4C519FAA292FCD2E00D45C1F /* Screenshots */,
 				4CE1CEE228FEB1F900E6C30E /* TR VPN */,
 				4CE1CF0328FEB36900E6C30E /* tunnel */,
 				4CE1CF0028FEB36900E6C30E /* Frameworks */,
@@ -353,9 +376,13 @@
 				4C16188B2906F60A0029EB09 /* animationConnectedView.json in Resources */,
 				4CE1CEF028FEB1FA00E6C30E /* LaunchScreen.storyboard in Resources */,
 				4C35402A2902B8FE00570BD9 /* connectedView.json in Resources */,
+				4C519FAC292FCD4400D45C1F /* app.gif in Resources */,
 				4CE1CEED28FEB1FA00E6C30E /* Assets.xcassets in Resources */,
+				4C519FB2292FCD6800D45C1F /* secondImage.jpg in Resources */,
+				4C519FB1292FCD6800D45C1F /* firstImage.jpg in Resources */,
 				4C35402E2902C6D600570BD9 /* closeConnectionView.json in Resources */,
 				4C3540282902B3FE00570BD9 /* disconnectedView.json in Resources */,
+				4C519FB0292FCD6800D45C1F /* thirdImage.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -373,6 +400,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C842614292ED2B90034F52A /* Extention+UIColor.swift in Sources */,
 				4C0445EE291D8E58000A8819 /* Server.swift in Sources */,
 				4CE1CEE828FEB1F900E6C30E /* MainViewController.swift in Sources */,
 				4CA4496A2922A19900E4D8D8 /* StorageManager.swift in Sources */,
